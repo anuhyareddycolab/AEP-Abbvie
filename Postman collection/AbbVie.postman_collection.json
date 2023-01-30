@@ -1,0 +1,1037 @@
+{
+	"info": {
+		"_postman_id": "42699fa3-8b86-4905-bac3-e51ca3d1a56c",
+		"name": "AbbVie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Data Ingestion",
+			"item": [
+				{
+					"name": "STAGE",
+					"item": [
+						{
+							"name": "Create a flow",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Patient Demographic dataflow - 2022-04-25 7:29\",\n    \"description\": \"Patient Demographics dataflow\",\n    \"flowSpec\": {\n        \"id\": \"9753525b-82c7-4dce-8a9b-5ccfce2b9876\",\n        \"version\": \"1.0\"\n    },\n    \"sourceConnectionIds\": [\n        \"1dd306cb-5026-4bcd-8e76-84f013b8566c\"\n    ],\n    \"targetConnectionIds\": [\n        \"73a6e5a5-8462-4889-b3f4-3b33b6f18cc1\"\n    ],\n    \"options\": {\n        \"partialIngestionPercent\": 90,\n        \"errorDiagnosticsEnabled\": true\n    },\n    \"scheduleParams\": {\n        \"frequency\": \"once\",\n        \"startTime\": 1650929913\n    },\n    \"transformations\": [\n        {\n            \"name\": \"Mapping\",\n            \"params\": {\n                \"mappingId\": \"7dca14b1ac4b4a4c963e1faf3ad6699b\",\n                \"mappingVersion\": \"0\"\n            }\n        }\n    ]\n}\n"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/flows",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"flows"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new source connection",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_STAGE}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Patient Source Connection\",\n  \"description\": \"Patient Source Connection\",\n  \"baseConnectionId\": \"0434c183-63ad-4d49-a359-58e88e67d9fa\",\n  \"state\": \"enabled\",\n  \"data\": {\n    \"format\": \"delimited\"\n  },\n  \"connectionSpec\": {\n    \"id\": \"b7bf2577-4520-42c9-bae9-cad01560f7bc\",\n    \"version\": \"1.0\"\n  },\n  \"params\": {\n    \"type\": \"file\",\n    \"path\": \"/ORG-PS-CDP-NP/Epsilon/TEST_ABOT_EPSI_DEMOGRAPHIC_CDP_20220422010203_138813.csv\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/sourceConnections",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"sourceConnections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a target connection",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_STAGE}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"name\": \"Patient Target Connection\",\n      \"description\": \"Patient Target Connection\",\n      \"data\": {\n        \"format\": \"delimited\",\n        \"schema\": {\n          \"version\": \"application/vnd.adobe.xed-full+json;version=1\",\n          \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\"\n        }\n      },\n      \"connectionSpec\": {\n        \"id\": \"c604ff05-7f1a-43c0-8e18-33bf874cb11c\",\n        \"version\": \"1.0\"\n      },\n      \"params\": {\n        \"dataSetId\": \"626382b2ecd795194a85be17\"\n      }\n}\n"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/targetConnections",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"targetConnections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a mapping set",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with \"Bearer \". For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The IMS Organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_STAGE}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place. See the [sandboxes overview](https://adobe.com/go/sandbox-overview-en) for more information.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"outputSchema\": {\n        \"schemaRef\": {\n            \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n            \"contentType\": \"1.0\"\n        }\n    },\n    \"mappings\": [\n        {\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_STAT\",\n            \"destination\": \"_abbviecommercial.hipaa.status\",\n            \"expressionAttributes\": [\n                \"HIPAA_STAT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_STAT\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.status\"\n        },\n        {\n            \"id\": \"6aafad2eef784630b49a1de1b2bada65\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_CNST_TYPE\",\n            \"destination\": \"_abbviecommercial.hipaa.consentSourceType\",\n            \"expressionAttributes\": [\n                \"HIPAA_CNST_TYPE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_CNST_TYPE\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.consentSourceType\"\n        },\n        {\n            \"id\": \"9fd01b5d476d44e68a8bc24960e606f2\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\",\n            \"destination\": \"_abbviecommercial.hipaa.optOutDate\",\n            \"expressionAttributes\": [\n                \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.optOutDate\"\n        },\n        {\n            \"id\": \"07c5c9e40db24d00812093551de4efba\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_SOURCE\",\n            \"destination\": \"_abbviecommercial.hipaa.channelSource\",\n            \"expressionAttributes\": [\n                \"HIPAA_SOURCE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_SOURCE\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.channelSource\"\n        },\n        {\n            \"id\": \"0e975b2732824225924bdb88e3943787\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_OPT_EXPR\",\n            \"destination\": \"_abbviecommercial.hipaa.consentExpirationDate\",\n            \"expressionAttributes\": [\n                \"HIPAA_OPT_EXPR\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_OPT_EXPR\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.consentExpirationDate\"\n        },\n        {\n            \"id\": \"e39ba8eaf9c546efb1ad66bf22bc23a3\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_OPT_VAL\",\n            \"destination\": \"_abbviecommercial.hipaa.authorization\",\n            \"expressionAttributes\": [\n                \"HIPAA_OPT_VAL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_OPT_VAL\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.authorization\"\n        },\n        {\n            \"id\": \"7bdf6910e73a48b09c345953528da561\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (MOBL_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \\\"mobile\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.mobilePhone.type\",\n            \"expressionAttributes\": [\n                \"MOBL_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (MOBL_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \\\"mobile\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.mobilePhone.type\"\n        },\n        {\n            \"id\": \"ca9a9d92592e4de0b01550acdb847283\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"MOBL_PHONE\",\n            \"destination\": \"_abbviecommercial.contactDetails.mobilePhone.number\",\n            \"expressionAttributes\": [\n                \"MOBL_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"MOBL_PHONE\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.mobilePhone.number\"\n        },\n        {\n            \"id\": \"2b451b7e38fb4b04885b754e9b275cf4\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (HOME_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(HOME_PHONE)), null, \\\"home\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.homePhone.type\",\n            \"expressionAttributes\": [\n                \"HOME_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (HOME_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(HOME_PHONE)), null, \\\"home\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homePhone.type\"\n        },\n        {\n            \"id\": \"a50a6bfd80d641c1a62bbbc041b07c3a\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HOME_PHONE\",\n            \"destination\": \"_abbviecommercial.contactDetails.homePhone.number\",\n            \"expressionAttributes\": [\n                \"HOME_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HOME_PHONE\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homePhone.number\"\n        },\n        {\n            \"id\": \"ca6b385514a4419384744b2ed1924403\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\n\\\"work\\\"), \\\"personal\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.personalEmail.type\",\n            \"expressionAttributes\": [\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\n\\\"work\\\"), \\\"personal\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.personalEmail.type\"\n        },\n        {\n            \"id\": \"484171d747384bf3aa6f302518ea971f\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))\",\n            \"destination\": \"_abbviecommercial.contactDetails.personalEmail.address\",\n            \"expressionAttributes\": [\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.personalEmail.address\"\n        },\n        {\n            \"id\": \"3ca441b5fd714bafbeafada90440f46e\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (WORK_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \\\"work\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressType\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (WORK_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \\\"work\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressType\"\n        },\n        {\n            \"id\": \"63c0ae74919346b5b9bf6324930f977d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"trim(WORK_ZIP)\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.zipCode\",\n            \"expressionAttributes\": [\n                \"WORK_ZIP\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"trim(WORK_ZIP)\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.zipCode\"\n        },\n        {\n            \"id\": \"673962a590f64fe2b8c2d83c09692054\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_STATE))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.state\",\n            \"expressionAttributes\": [\n                \"WORK_STATE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_STATE))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.state\"\n        },\n        {\n            \"id\": \"c6d9b699c9de4807a257aadae55c73d3\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_CITY))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.city\",\n            \"expressionAttributes\": [\n                \"WORK_CITY\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_CITY))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.city\"\n        },\n        {\n            \"id\": \"14d24557cfea4529971159530d40ae46\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_ADDR_2))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressLine2\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_2\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_ADDR_2))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressLine2\"\n        },\n        {\n            \"id\": \"867de0b1959340cda16fc16a2ccbb026\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_ADDR_1))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressLine1\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_ADDR_1))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressLine1\"\n        },\n        {\n            \"id\": \"35db8b1573014fed9487e775cb040656\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (HOME_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \\\"home\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressType\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (HOME_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \\\"home\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressType\"\n        },\n        {\n            \"id\": \"4f350449c91a49e9a4040760d9783895\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"trim(HOME_ZIP)\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.zipCode\",\n            \"expressionAttributes\": [\n                \"HOME_ZIP\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"trim(HOME_ZIP)\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.zipCode\"\n        },\n        {\n            \"id\": \"31828050f539431b9c94f1f6260f84a7\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_STATE))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.state\",\n            \"expressionAttributes\": [\n                \"HOME_STATE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_STATE))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.state\"\n        },\n        {\n            \"id\": \"0cf4a72b8fda4de59a2576768591ee01\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_CITY))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.city\",\n            \"expressionAttributes\": [\n                \"HOME_CITY\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_CITY))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.city\"\n        },\n        {\n            \"id\": \"3c0e3f8358cb4147bb927439abb06bfa\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_ADDR_2))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressLine2\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_2\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_ADDR_2))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressLine2\"\n        },\n        {\n            \"id\": \"2583efd8e381425196f6e9baaa74bc73\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_ADDR_1))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressLine1\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_ADDR_1))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressLine1\"\n        },\n        {\n            \"id\": \"90b92e47f4cc413d958b453615670b98\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"decode(iif(PREF_LANG_CD == null || \\\"\\\".equalsIgnoreCase(trim(PREF_LANG_CD)), \\\"EMPTY\\\", \\nupper(trim(PREF_LANG_CD))), \\\"EN\\\", \\\"en\\\", \\\"ES\\\", \\\"es\\\", \\\"EMPTY\\\", null, \\\"other\\\")\",\n            \"destination\": \"_abbviecommercial.patientPreferences.preferredLanguage\",\n            \"expressionAttributes\": [\n                \"PREF_LANG_CD\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"decode(iif(PREF_LANG_CD == null || \\\"\\\".equalsIgnoreCase(trim(PREF_LANG_CD)), \\\"EMPTY\\\", \\nupper(trim(PREF_LANG_CD))), \\\"EN\\\", \\\"en\\\", \\\"ES\\\", \\\"es\\\", \\\"EMPTY\\\", null, \\\"other\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.patientPreferences.preferredLanguage\"\n        },\n        {\n            \"id\": \"a02b0f07fec24175a62c9c60e2c6c4f0\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"decode(upper(trim(GNDR_CD)), \\\"M\\\", \\\"male\\\", \\\"F\\\", \\\"female\\\", \\\"O\\\", \\\"other\\\", \\\"U\\\", \\\"unknown\\\", null)\",\n            \"destination\": \"_abbviecommercial.personDetails.gender\",\n            \"expressionAttributes\": [\n                \"GNDR_CD\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"decode(upper(trim(GNDR_CD)), \\\"M\\\", \\\"male\\\", \\\"F\\\", \\\"female\\\", \\\"O\\\", \\\"other\\\", \\\"U\\\", \\\"unknown\\\", null)\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.gender\"\n        },\n        {\n            \"id\": \"6f712fc9da6e4e1f9dc1e170e6210396\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))\",\n            \"destination\": \"_abbviecommercial.personDetails.birthYear\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthYear\"\n        },\n        {\n            \"id\": \"9d10ef309eda4c7d8ea9c21d865e2423\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \\\"-\\\", substr(BIRTH_DT, 5,2)))\",\n            \"destination\": \"_abbviecommercial.personDetails.birthDayAndMonth\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \\\"-\\\", substr(BIRTH_DT, 5,2)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthDayAndMonth\"\n        },\n        {\n            \"id\": \"ae8275b1db6e42c3af7a9997f858b5f8\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"BIRTH_DT\",\n            \"destination\": \"_abbviecommercial.personDetails.birthDate\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"BIRTH_DT\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthDate\"\n        },\n        {\n            \"id\": \"2daf3b071dfb4819b18d4c22d92925e4\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(concat(trim(FRST_NM), \\\" \\\", iif(MID_NM == null, \\\"\\\", concat(trim(MID_NM), \\\" \\\")), trim(LAST_NM)))\",\n            \"destination\": \"_abbviecommercial.personDetails.name\",\n            \"expressionAttributes\": [\n                \"LAST_NM\",\n                \"FRST_NM\",\n                \"MID_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(concat(trim(FRST_NM), \\\" \\\", iif(MID_NM == null, \\\"\\\", concat(trim(MID_NM), \\\" \\\")), trim(LAST_NM)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.name\"\n        },\n        {\n            \"id\": \"2958a9f1f11d45eb8d9b49d6db74a912\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(LAST_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.lastName\",\n            \"expressionAttributes\": [\n                \"LAST_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(LAST_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.lastName\"\n        },\n        {\n            \"id\": \"331aee5c86bc4b12b14ce4378fbe31ce\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(MID_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.middleName\",\n            \"expressionAttributes\": [\n                \"MID_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(MID_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.middleName\"\n        },\n        {\n            \"id\": \"187e54bc7d6d4610bc620132b68d6b28\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(FRST_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.firstName\",\n            \"expressionAttributes\": [\n                \"FRST_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(FRST_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.firstName\"\n        },\n        {\n            \"id\": \"ae6d6c87ac1e43e0b7b54270f8623b18\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.hashedEmail\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.hashedEmail\"\n        },\n        {\n            \"id\": \"6bf8c477cc7a4de99e28b61c528ac527\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \\\"-\\\", INDIV_ID, \\\"-\\\", \\\"\\\")), \\nsha256(concat(PRM_ID, \\\"-\\\", INDIV_ID)))\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.cdpId\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"PRM_ID\",\n                \"INDIV_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \\\"-\\\", INDIV_ID, \\\"-\\\", \\\"\\\")), \\nsha256(concat(PRM_ID, \\\"-\\\", INDIV_ID)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.cdpId\"\n        },\n        {\n            \"id\": \"14f38995771141a3abcb7799a84b897d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.ecid\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"MKT_CLOUD_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.ecid\"\n        },\n        {\n            \"id\": \"71afc539d66d4aa58e583e3da423ae4d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"PRM_ID\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.prmID\",\n            \"expressionAttributes\": [\n                \"PRM_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"PRM_ID\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.prmID\"\n        },\n        {\n            \"id\": \"5ae33dbcd7ac4d719c9d000865397af6\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"INDIV_ID\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.indivId\",\n            \"expressionAttributes\": [\n                \"INDIV_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"INDIV_ID\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.indivId\"\n        }\n    ],\n    \"strictMapping\": false,\n    \"allowNullValues\": false,\n    \"mappingMode\": \"MAP\",\n    \"xdmVersion\": \"1.0\",\n    \"schemaRef\": {\n        \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n        \"contentType\": \"1.0\"\n    },\n    \"xdmSchema\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\"\n}"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/conversion/mappingSets",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"conversion",
+										"mappingSets"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DEV",
+					"item": [
+						{
+							"name": "Create a new source connection",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Patient Source Connection\",\n  \"description\": \"Patient Source Connection\",\n  \"baseConnectionId\": \"c70825b9-3f04-4d28-8131-632e4a392e59\",\n  \"state\": \"enabled\",\n  \"data\": {\n    \"format\": \"delimited\"\n  },\n  \"connectionSpec\": {\n    \"id\": \"b7bf2577-4520-42c9-bae9-cad01560f7bc\",\n    \"version\": \"1.0\"\n  },\n  \"params\": {\n    \"type\": \"file\",\n    \"path\": \"/ORG-PS-CDP-NP/Epsilon/TEST_ABOT_EPSI_DEMOGRAPHIC_CDP_20220422010203_138813.csv\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/sourceConnections",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"sourceConnections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a target connection",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"name\": \"Patient Target Connection\",\n      \"description\": \"Patient Target Connection\",\n      \"data\": {\n        \"format\": \"delimited\",\n        \"schema\": {\n          \"version\": \"application/vnd.adobe.xed-full+json;version=1\",\n          \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\"\n        }\n      },\n      \"connectionSpec\": {\n        \"id\": \"c604ff05-7f1a-43c0-8e18-33bf874cb11c\",\n        \"version\": \"1.0\"\n      },\n      \"params\": {\n        \"dataSetId\": \"625ef6603d67b019491a68d9\"\n      }\n}\n"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/targetConnections",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"targetConnections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a mapping set",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with \"Bearer \". For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The IMS Organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place. See the [sandboxes overview](https://adobe.com/go/sandbox-overview-en) for more information.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"outputSchema\": {\n        \"schemaRef\": {\n            \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n            \"contentType\": \"1.0\"\n        }\n    },\n    \"mappings\": [\n        {\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_STAT\",\n            \"destination\": \"_abbviecommercial.hipaa.status\",\n            \"expressionAttributes\": [\n                \"HIPAA_STAT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_STAT\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.status\"\n        },\n        {\n            \"id\": \"6aafad2eef784630b49a1de1b2bada65\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_CNST_TYPE\",\n            \"destination\": \"_abbviecommercial.hipaa.consentSourceType\",\n            \"expressionAttributes\": [\n                \"HIPAA_CNST_TYPE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_CNST_TYPE\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.consentSourceType\"\n        },\n        {\n            \"id\": \"9fd01b5d476d44e68a8bc24960e606f2\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\",\n            \"destination\": \"_abbviecommercial.hipaa.optOutDate\",\n            \"expressionAttributes\": [\n                \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"date(HIPAA_OPT_TS, \\\"yyyy-MM-dd HH:mm:ss\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.optOutDate\"\n        },\n        {\n            \"id\": \"07c5c9e40db24d00812093551de4efba\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_SOURCE\",\n            \"destination\": \"_abbviecommercial.hipaa.channelSource\",\n            \"expressionAttributes\": [\n                \"HIPAA_SOURCE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_SOURCE\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.channelSource\"\n        },\n        {\n            \"id\": \"0e975b2732824225924bdb88e3943787\",\n            \"version\": 0,\n            \"createdDate\": 1643383143345,\n            \"modifiedDate\": 1643383143345,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_OPT_EXPR\",\n            \"destination\": \"_abbviecommercial.hipaa.consentExpirationDate\",\n            \"expressionAttributes\": [\n                \"HIPAA_OPT_EXPR\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_OPT_EXPR\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.consentExpirationDate\"\n        },\n        {\n            \"id\": \"e39ba8eaf9c546efb1ad66bf22bc23a3\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HIPAA_OPT_VAL\",\n            \"destination\": \"_abbviecommercial.hipaa.authorization\",\n            \"expressionAttributes\": [\n                \"HIPAA_OPT_VAL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HIPAA_OPT_VAL\",\n            \"destinationXdmPath\": \"_abbviecommercial.hipaa.authorization\"\n        },\n        {\n            \"id\": \"7bdf6910e73a48b09c345953528da561\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (MOBL_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \\\"mobile\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.mobilePhone.type\",\n            \"expressionAttributes\": [\n                \"MOBL_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (MOBL_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \\\"mobile\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.mobilePhone.type\"\n        },\n        {\n            \"id\": \"ca9a9d92592e4de0b01550acdb847283\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"MOBL_PHONE\",\n            \"destination\": \"_abbviecommercial.contactDetails.mobilePhone.number\",\n            \"expressionAttributes\": [\n                \"MOBL_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"MOBL_PHONE\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.mobilePhone.number\"\n        },\n        {\n            \"id\": \"2b451b7e38fb4b04885b754e9b275cf4\",\n            \"version\": 0,\n            \"createdDate\": 1643383143346,\n            \"modifiedDate\": 1643383143346,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (HOME_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(HOME_PHONE)), null, \\\"home\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.homePhone.type\",\n            \"expressionAttributes\": [\n                \"HOME_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (HOME_PHONE == null || \\\"\\\".equalsIgnoreCase(trim(HOME_PHONE)), null, \\\"home\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homePhone.type\"\n        },\n        {\n            \"id\": \"a50a6bfd80d641c1a62bbbc041b07c3a\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"HOME_PHONE\",\n            \"destination\": \"_abbviecommercial.contactDetails.homePhone.number\",\n            \"expressionAttributes\": [\n                \"HOME_PHONE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"HOME_PHONE\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homePhone.number\"\n        },\n        {\n            \"id\": \"ca6b385514a4419384744b2ed1924403\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\n\\\"work\\\"), \\\"personal\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.personalEmail.type\",\n            \"expressionAttributes\": [\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\n\\\"work\\\"), \\\"personal\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.personalEmail.type\"\n        },\n        {\n            \"id\": \"484171d747384bf3aa6f302518ea971f\",\n            \"version\": 0,\n            \"createdDate\": 1643383143347,\n            \"modifiedDate\": 1643383143347,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))\",\n            \"destination\": \"_abbviecommercial.contactDetails.personalEmail.address\",\n            \"expressionAttributes\": [\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), \\niif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \\nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.personalEmail.address\"\n        },\n        {\n            \"id\": \"3ca441b5fd714bafbeafada90440f46e\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (WORK_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \\\"work\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressType\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (WORK_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \\\"work\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressType\"\n        },\n        {\n            \"id\": \"63c0ae74919346b5b9bf6324930f977d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"trim(WORK_ZIP)\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.zipCode\",\n            \"expressionAttributes\": [\n                \"WORK_ZIP\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"trim(WORK_ZIP)\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.zipCode\"\n        },\n        {\n            \"id\": \"673962a590f64fe2b8c2d83c09692054\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_STATE))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.state\",\n            \"expressionAttributes\": [\n                \"WORK_STATE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_STATE))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.state\"\n        },\n        {\n            \"id\": \"c6d9b699c9de4807a257aadae55c73d3\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_CITY))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.city\",\n            \"expressionAttributes\": [\n                \"WORK_CITY\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_CITY))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.city\"\n        },\n        {\n            \"id\": \"14d24557cfea4529971159530d40ae46\",\n            \"version\": 0,\n            \"createdDate\": 1643383143349,\n            \"modifiedDate\": 1643383143349,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_ADDR_2))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressLine2\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_2\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_ADDR_2))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressLine2\"\n        },\n        {\n            \"id\": \"867de0b1959340cda16fc16a2ccbb026\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(WORK_ADDR_1))\",\n            \"destination\": \"_abbviecommercial.contactDetails.workAddress.addressLine1\",\n            \"expressionAttributes\": [\n                \"WORK_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(WORK_ADDR_1))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.workAddress.addressLine1\"\n        },\n        {\n            \"id\": \"35db8b1573014fed9487e775cb040656\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif (HOME_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \\\"home\\\")\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressType\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif (HOME_ADDR_1 == null || \\\"\\\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \\\"home\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressType\"\n        },\n        {\n            \"id\": \"4f350449c91a49e9a4040760d9783895\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"trim(HOME_ZIP)\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.zipCode\",\n            \"expressionAttributes\": [\n                \"HOME_ZIP\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"trim(HOME_ZIP)\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.zipCode\"\n        },\n        {\n            \"id\": \"31828050f539431b9c94f1f6260f84a7\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_STATE))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.state\",\n            \"expressionAttributes\": [\n                \"HOME_STATE\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_STATE))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.state\"\n        },\n        {\n            \"id\": \"0cf4a72b8fda4de59a2576768591ee01\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_CITY))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.city\",\n            \"expressionAttributes\": [\n                \"HOME_CITY\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_CITY))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.city\"\n        },\n        {\n            \"id\": \"3c0e3f8358cb4147bb927439abb06bfa\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_ADDR_2))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressLine2\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_2\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_ADDR_2))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressLine2\"\n        },\n        {\n            \"id\": \"2583efd8e381425196f6e9baaa74bc73\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(HOME_ADDR_1))\",\n            \"destination\": \"_abbviecommercial.contactDetails.homeAddress.addressLine1\",\n            \"expressionAttributes\": [\n                \"HOME_ADDR_1\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(HOME_ADDR_1))\",\n            \"destinationXdmPath\": \"_abbviecommercial.contactDetails.homeAddress.addressLine1\"\n        },\n        {\n            \"id\": \"90b92e47f4cc413d958b453615670b98\",\n            \"version\": 0,\n            \"createdDate\": 1643383143350,\n            \"modifiedDate\": 1643383143350,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"decode(iif(PREF_LANG_CD == null || \\\"\\\".equalsIgnoreCase(trim(PREF_LANG_CD)), \\\"EMPTY\\\", \\nupper(trim(PREF_LANG_CD))), \\\"EN\\\", \\\"en\\\", \\\"ES\\\", \\\"es\\\", \\\"EMPTY\\\", null, \\\"other\\\")\",\n            \"destination\": \"_abbviecommercial.patientPreferences.preferredLanguage\",\n            \"expressionAttributes\": [\n                \"PREF_LANG_CD\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"decode(iif(PREF_LANG_CD == null || \\\"\\\".equalsIgnoreCase(trim(PREF_LANG_CD)), \\\"EMPTY\\\", \\nupper(trim(PREF_LANG_CD))), \\\"EN\\\", \\\"en\\\", \\\"ES\\\", \\\"es\\\", \\\"EMPTY\\\", null, \\\"other\\\")\",\n            \"destinationXdmPath\": \"_abbviecommercial.patientPreferences.preferredLanguage\"\n        },\n        {\n            \"id\": \"a02b0f07fec24175a62c9c60e2c6c4f0\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"decode(upper(trim(GNDR_CD)), \\\"M\\\", \\\"male\\\", \\\"F\\\", \\\"female\\\", \\\"O\\\", \\\"other\\\", \\\"U\\\", \\\"unknown\\\", null)\",\n            \"destination\": \"_abbviecommercial.personDetails.gender\",\n            \"expressionAttributes\": [\n                \"GNDR_CD\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"decode(upper(trim(GNDR_CD)), \\\"M\\\", \\\"male\\\", \\\"F\\\", \\\"female\\\", \\\"O\\\", \\\"other\\\", \\\"U\\\", \\\"unknown\\\", null)\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.gender\"\n        },\n        {\n            \"id\": \"6f712fc9da6e4e1f9dc1e170e6210396\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))\",\n            \"destination\": \"_abbviecommercial.personDetails.birthYear\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthYear\"\n        },\n        {\n            \"id\": \"9d10ef309eda4c7d8ea9c21d865e2423\",\n            \"version\": 0,\n            \"createdDate\": 1643383143351,\n            \"modifiedDate\": 1643383143351,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \\\"-\\\", substr(BIRTH_DT, 5,2)))\",\n            \"destination\": \"_abbviecommercial.personDetails.birthDayAndMonth\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(BIRTH_DT == null || \\\"\\\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \\\"-\\\", substr(BIRTH_DT, 5,2)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthDayAndMonth\"\n        },\n        {\n            \"id\": \"ae8275b1db6e42c3af7a9997f858b5f8\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"BIRTH_DT\",\n            \"destination\": \"_abbviecommercial.personDetails.birthDate\",\n            \"expressionAttributes\": [\n                \"BIRTH_DT\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"BIRTH_DT\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.birthDate\"\n        },\n        {\n            \"id\": \"2daf3b071dfb4819b18d4c22d92925e4\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(concat(trim(FRST_NM), \\\" \\\", iif(MID_NM == null, \\\"\\\", concat(trim(MID_NM), \\\" \\\")), trim(LAST_NM)))\",\n            \"destination\": \"_abbviecommercial.personDetails.name\",\n            \"expressionAttributes\": [\n                \"LAST_NM\",\n                \"FRST_NM\",\n                \"MID_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(concat(trim(FRST_NM), \\\" \\\", iif(MID_NM == null, \\\"\\\", concat(trim(MID_NM), \\\" \\\")), trim(LAST_NM)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.name\"\n        },\n        {\n            \"id\": \"2958a9f1f11d45eb8d9b49d6db74a912\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(LAST_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.lastName\",\n            \"expressionAttributes\": [\n                \"LAST_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(LAST_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.lastName\"\n        },\n        {\n            \"id\": \"331aee5c86bc4b12b14ce4378fbe31ce\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(MID_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.middleName\",\n            \"expressionAttributes\": [\n                \"MID_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(MID_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.middleName\"\n        },\n        {\n            \"id\": \"187e54bc7d6d4610bc620132b68d6b28\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"lower(trim(FRST_NM))\",\n            \"destination\": \"_abbviecommercial.personDetails.firstName\",\n            \"expressionAttributes\": [\n                \"FRST_NM\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"lower(trim(FRST_NM))\",\n            \"destinationXdmPath\": \"_abbviecommercial.personDetails.firstName\"\n        },\n        {\n            \"id\": \"ae6d6c87ac1e43e0b7b54270f8623b18\",\n            \"version\": 0,\n            \"createdDate\": 1643383143352,\n            \"modifiedDate\": 1643383143352,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.hashedEmail\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"HOME_EMAIL\",\n                \"WORK_EMAIL\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \\\"\\\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.hashedEmail\"\n        },\n        {\n            \"id\": \"6bf8c477cc7a4de99e28b61c528ac527\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \\\"-\\\", INDIV_ID, \\\"-\\\", \\\"\\\")), \\nsha256(concat(PRM_ID, \\\"-\\\", INDIV_ID)))\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.cdpId\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"PRM_ID\",\n                \"INDIV_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \\\"-\\\", INDIV_ID, \\\"-\\\", \\\"\\\")), \\nsha256(concat(PRM_ID, \\\"-\\\", INDIV_ID)))\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.cdpId\"\n        },\n        {\n            \"id\": \"14f38995771141a3abcb7799a84b897d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.aep-xl\",\n            \"source\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.ecid\",\n            \"expressionAttributes\": [\n                \"HAS_CAREGIVER\",\n                \"MKT_CLOUD_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"iif(\\\"Y\\\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.ecid\"\n        },\n        {\n            \"id\": \"71afc539d66d4aa58e583e3da423ae4d\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"PRM_ID\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.prmID\",\n            \"expressionAttributes\": [\n                \"PRM_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"PRM_ID\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.prmID\"\n        },\n        {\n            \"id\": \"5ae33dbcd7ac4d719c9d000865397af6\",\n            \"version\": 0,\n            \"createdDate\": 1643383143353,\n            \"modifiedDate\": 1643383143353,\n            \"createdBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"modifiedBy\": \"E56B510A6147F1DD0A495ED1@techacct.adobe.com\",\n            \"sourceType\": \"text/x.schema-path\",\n            \"source\": \"INDIV_ID\",\n            \"destination\": \"_abbviecommercial.abbvieIdentities.indivId\",\n            \"expressionAttributes\": [\n                \"INDIV_ID\"\n            ],\n            \"identity\": false,\n            \"primaryIdentity\": false,\n            \"functionVersion\": 1,\n            \"sourceAttribute\": \"INDIV_ID\",\n            \"destinationXdmPath\": \"_abbviecommercial.abbvieIdentities.indivId\"\n        }\n    ],\n    \"strictMapping\": false,\n    \"allowNullValues\": false,\n    \"mappingMode\": \"MAP\",\n    \"xdmVersion\": \"1.0\",\n    \"schemaRef\": {\n        \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n        \"contentType\": \"1.0\"\n    },\n    \"xdmSchema\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\"\n}"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/conversion/mappingSets",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"conversion",
+										"mappingSets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a flow",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/** Begin Adobe-provided Pre-Request Scripts **/",
+											"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+											"pm.request.headers.each(header => {",
+											"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+											"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+											"    }",
+											"});",
+											"",
+											"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+											"pm.request.url.query.remove(q => { ",
+											"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+											"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+											"    } ",
+											"});",
+											"/** End Adobe-provided Pre-Request Scripts **/"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"description": "The access token which can be copied from your Experience Platform integration, prefixed with 'Bearer '. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{API_KEY}}",
+										"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-gw-ims-org-id",
+										"value": "{{IMS_ORG}}",
+										"description": "The organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+										"type": "string"
+									},
+									{
+										"key": "x-sandbox-name",
+										"value": "{{SANDBOX_NAME}}",
+										"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place.",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Patient Demographic dataflow - 2022-04-25 7:29\",\n    \"description\": \"Patient Demographics dataflow\",\n    \"flowSpec\": {\n        \"id\": \"9753525b-82c7-4dce-8a9b-5ccfce2b9876\",\n        \"version\": \"1.0\"\n    },\n    \"sourceConnectionIds\": [\n        \"1dd306cb-5026-4bcd-8e76-84f013b8566c\"\n    ],\n    \"targetConnectionIds\": [\n        \"73a6e5a5-8462-4889-b3f4-3b33b6f18cc1\"\n    ],\n    \"options\": {\n        \"partialIngestionPercent\": 90,\n        \"errorDiagnosticsEnabled\": true\n    },\n    \"scheduleParams\": {\n        \"frequency\": \"once\",\n        \"startTime\": 1650929913\n    },\n    \"transformations\": [\n        {\n            \"name\": \"Mapping\",\n            \"params\": {\n                \"mappingId\": \"7dca14b1ac4b4a4c963e1faf3ad6699b\",\n                \"mappingVersion\": \"0\"\n            }\n        }\n    ]\n}\n"
+								},
+								"url": {
+									"raw": "https://platform.adobe.io/data/foundation/flowservice/flows",
+									"protocol": "https",
+									"host": [
+										"platform",
+										"adobe",
+										"io"
+									],
+									"path": [
+										"data",
+										"foundation",
+										"flowservice",
+										"flows"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CreatePatient - 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.adobe.xed-full+json; version=1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					},
+					{
+						"key": "x-gw-ims-org-id",
+						"value": "{{IMS_ORG}}",
+						"type": "text"
+					},
+					{
+						"key": "x-sandbox-name",
+						"value": "{{SANDBOX_NAME}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"header\": {\n    \"schemaRef\": {\n      \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n      \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n    },\n    \"imsOrgId\": \"C2C7C77B56E2C5147F000101@AdobeOrg\",\n    \"datasetId\": \"625ef6603d67b019491a68d9\",\n    \"source\": {\n      \"name\": \"PatientProfile data flow 2022-04-20T09:28:36.679-05:00\"\n    }\n  },\n  \"body\": {\n    \"xdmMeta\": {\n      \"schemaRef\": {\n        \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n        \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n      }\n    },\n    \"xdmEntity\": {\n      \"_abbviecommercial\": {\n        \"abbvieIdentities\": {\n          \"cdpId\": \"1243-PRM1-1001-INDIV-1001\",\n          \"indivId\": \"INDIV-1001\",\n          \"prmID\": \"PRM1-1001\",\n          \"uuid\": \"URIID100001\"\n        },\n        \"contactDetails\": {\n          \"homeAddress\": {\n            \"addressLine1\": \"1209 Miller Dr\",\n            \"addressLine2\": \"\",\n            \"addressType\": \"home\",\n            \"city\": \"Alpharetta\",\n            \"state\": \"GA\",\n            \"zipCode\": \"60085\"\n          },\n          \"homePhone\": {\n            \"number\": \"\",\n            \"type\": \"\"\n          },\n          \"mobilePhone\": {\n            \"number\": \"\"\n          },\n          \"personalEmail\": {\n            \"address\": \"Joesph.william@emailme.com\",\n            \"type\": \"personal\"\n          },\n          \"workAddress\": {\n            \"addressLine1\": \"\",\n            \"addressLine2\": \"\",\n            \"addressType\": \"\",\n            \"city\": \"\",\n            \"state\": \"\",\n            \"zipCode\": \"\"\n          }\n        },\n        \"patientPreferences\": {\n          \"primaryContact\": \"self\"\n        },\n        \"personDetails\": {\n          \"birthDate\": \"1996-12-21\",\n          \"birthDayAndMonth\": \"1996\",\n          \"birthYear\": \"1996\",\n          \"gender\": \"male\",\n          \"firstName\": \"Joseph\",\n          \"lastName\": \"William\",\n          \"middleName\": \"\",\n          \"name\": \"Joseph William\"\n        }\n      },\n      \"_id\": \"10098769134689-1650464916681-1\",\n      \"_repo\": {\n        \"createDate\": \"2022-04-21T15:49:55.0752948Z\"\n      }\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://dcs.adobedc.net/collection/cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626?synchronousValidation=true",
+					"protocol": "https",
+					"host": [
+						"dcs",
+						"adobedc",
+						"net"
+					],
+					"path": [
+						"collection",
+						"cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626"
+					],
+					"query": [
+						{
+							"key": "synchronousValidation",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePatient - 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.adobe.xed-full+json; version=1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					},
+					{
+						"key": "x-gw-ims-org-id",
+						"value": "{{IMS_ORG}}",
+						"type": "text"
+					},
+					{
+						"key": "x-sandbox-name",
+						"value": "{{SANDBOX_NAME}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"header\": {\n    \"schemaRef\": {\n      \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n      \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n    },\n    \"imsOrgId\": \"C2C7C77B56E2C5147F000101@AdobeOrg\",\n    \"datasetId\": \"625ef6603d67b019491a68d9\",\n    \"source\": {\n      \"name\": \"PatientProfile data flow 2022-04-20T09:28:36.679-05:00\"\n    }\n  },\n  \"body\": {\n    \"xdmMeta\": {\n      \"schemaRef\": {\n        \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7\",\n        \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n      }\n    },\n    \"xdmEntity\": {\n      \"_abbviecommercial\": {\n        \"abbvieIdentities\": {\n          \"cdpId\": \"1243-PRM1-1001-INDIV-1002\",\n          \"indivId\": \"INDIV-1002\",\n          \"prmID\": \"PRM1-1002\",\n          \"uuid\": \"URIID100002\"\n        },\n        \"contactDetails\": {\n          \"homeAddress\": {\n            \"addressLine1\": \"2010 Oliver Dr\",\n            \"addressLine2\": \"\",\n            \"addressType\": \"home\",\n            \"city\": \"Milton\",\n            \"state\": \"GA\",\n            \"zipCode\": \"30004\"\n          },\n          \"homePhone\": {\n            \"number\": \"\",\n            \"type\": \"\"\n          },\n          \"mobilePhone\": {\n            \"number\": \"\"\n          },\n          \"personalEmail\": {\n            \"address\": \"tushar.kapoor@emailme.com\",\n            \"type\": \"personal\"\n          },\n          \"workAddress\": {\n            \"addressLine1\": \"\",\n            \"addressLine2\": \"\",\n            \"addressType\": \"\",\n            \"city\": \"\",\n            \"state\": \"\",\n            \"zipCode\": \"\"\n          }\n        },\n        \"patientPreferences\": {\n          \"primaryContact\": \"self\"\n        },\n        \"personDetails\": {\n          \"birthDate\": \"1996-09-10\",\n          \"birthDayAndMonth\": \"1996\",\n          \"birthYear\": \"1996\",\n          \"gender\": \"male\",\n          \"firstName\": \"Tushar\",\n          \"lastName\": \"Kapoor\",\n          \"middleName\": \"\",\n          \"name\": \"Tushar Kapoor\"\n        }\n      },\n      \"_id\": \"10098769134689-1650464916681-1\",\n      \"_repo\": {\n        \"createDate\": \"2022-04-21T15:49:55.0752948Z\"\n      }\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://dcs.adobedc.net/collection/cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626?synchronousValidation=true",
+					"protocol": "https",
+					"host": [
+						"dcs",
+						"adobedc",
+						"net"
+					],
+					"path": [
+						"collection",
+						"cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626"
+					],
+					"query": [
+						{
+							"key": "synchronousValidation",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve an XDM Individual entity by ID or namespace Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"/** Begin Adobe-provided Pre-Request Scripts **/",
+							"// Do not send HTTP Headers with empty variables, as Postman will send the literal variable name",
+							"pm.request.headers.each(header => {",
+							"    if (header.value.startsWith(\"{{\") && header.value.endsWith(\"}}\")) {",
+							"        if (!pm.variables.get(header.value.substring(2, header.value.length - 2))) { pm.request.headers.remove(header.key); }",
+							"    }",
+							"});",
+							"",
+							"// Do not send HTTP URL Query Parameters with empty variables, as Postman will send the literal variable name",
+							"pm.request.url.query.remove(q => { ",
+							"    if (q.value.startsWith(\"{{\") && q.value.endsWith(\"}}\")) {",
+							"        return !pm.variables.get(q.value.substring(2, q.value.length - 2));",
+							"    } ",
+							"});",
+							"/** End Adobe-provided Pre-Request Scripts **/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"description": "The access token which can be copied from your Experience Platform integration, prefixed with \"Bearer \".  For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+						"type": "string"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{API_KEY}}",
+						"description": "The API key which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+						"type": "string"
+					},
+					{
+						"key": "x-gw-ims-org-id",
+						"value": "{{IMS_ORG}}",
+						"description": "The Organization ID which can be copied from your Experience Platform integration. For more information on how to obtain this value, visit the [authentication tutorial](http://www.adobe.com/go/platform-api-authentication-en).",
+						"type": "string"
+					},
+					{
+						"key": "x-sandbox-name",
+						"value": "{{SANDBOX_NAME}}",
+						"description": "All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Platform APIs require a header that specifies the name of the sandbox in which the operation will take place. See the [sandboxes overview](https://adobe.com/go/sandbox-overview-en) for more information.",
+						"type": "string"
+					}
+				],
+				"url": {
+					"raw": "https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityIdNS=prmid&entityId=90504416987",
+					"protocol": "https",
+					"host": [
+						"platform",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"data",
+						"core",
+						"ups",
+						"access",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "schema.name",
+							"value": "_xdm.context.profile"
+						},
+						{
+							"key": "relatedSchema.name",
+							"value": "{{relatedSchema.name}}",
+							"disabled": true
+						},
+						{
+							"key": "relatedEntityId",
+							"value": "{{relatedEntityId}}",
+							"disabled": true
+						},
+						{
+							"key": "relatedEntityIdNS",
+							"value": "{{relatedEntityIdNS}}",
+							"disabled": true
+						},
+						{
+							"key": "fields",
+							"value": "{{fields}}",
+							"disabled": true
+						},
+						{
+							"key": "mergePolicyId",
+							"value": "{{mergePolicyId}}",
+							"disabled": true
+						},
+						{
+							"key": "startTime",
+							"value": "{{startTime}}",
+							"disabled": true
+						},
+						{
+							"key": "endTime",
+							"value": "{{endTime}}",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "{{limit}}",
+							"disabled": true
+						},
+						{
+							"key": "orderby",
+							"value": "{{orderby}}",
+							"disabled": true
+						},
+						{
+							"key": "property",
+							"value": "{{property}}",
+							"disabled": true
+						},
+						{
+							"key": "withCA",
+							"value": "{{withCA}}",
+							"disabled": true
+						},
+						{
+							"key": "entityIdNS",
+							"value": "prmid"
+						},
+						{
+							"key": "entityId",
+							"value": "90504416987"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.adobe.xed-full+json; version=1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					},
+					{
+						"key": "x-gw-ims-org-id",
+						"value": "{{IMS_ORG}}",
+						"type": "text"
+					},
+					{
+						"key": "x-sandbox-name",
+						"value": "{{SANDBOX_STAGING}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"header\": {\n    \"schemaRef\": {\n      \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1\",\n      \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n    },\n    \"imsOrgId\": \"C2C7C77B56E2C5147F000101@AdobeOrg\",\n    \"datasetId\": \"61a9c9cb4bada619482775bf\",\n    \"source\": {\n      \"name\": \"Secured Registration Event Streaming dataflow - 01/26/2022 2:28 PM\"\n    }\n  },\n  \"body\": {\n    \"xdmMeta\": {\n      \"schemaRef\": {\n        \"id\": \"https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1\",\n        \"contentType\": \"application/vnd.adobe.xed-full+json;version=1.0\"\n      }\n    },\n    \"xdmEntity\": {\n      \"_abbviecommercial\": {\n        \"abbvieIdentities\": {\n          \"cdpId\": \"CDP-PRMID-INDIVID-1001\",\n          \"indivId\": \"INDIV-1001\",\n          \"prmID\": \"PRMID-1001\"\n        },\n        \"channelSource\": {\n          \"channelDataSource\": \"Web\",\n          \"drugName\": \"SKYRIZI\",\n          \"specialty\": \"IMMUNOLOGY\"\n        },\n        \"diagnosis\": {\n          \"diagnosisAbbreviation\": \"Ps\",\n          \"diagnosisCode\": \"Ps\",\n          \"diagnosisName\": \"Plaque psoriasis\",\n          \"isActive\": \"Yes\",\n          \"specialtyName\": \"Rheumatology\"\n        },\n        \"registrationDetails\": {\n          \"administrativeMode\": \"Injection\",\n          \"insurancePlanType\": \"Sample value\",\n          \"isPatient\": false,\n          \"lengthOfTherapy\": \"2 months\",\n          \"placeOfService\": \"Doctor Office\",\n          \"registrationDate\": \"2021-11-12T20:20:39+00:00\",\n          \"registrationSubType\": \"Sample value\",\n          \"registrationType\": \"Sample value\",\n          \"therapyStartDate\": \"2021-11-12\"\n        }\n      },\n      \"_id\": \"CDP-PRMID-INDIVID-1001-1001\",\n      \"eventType\": \"advertising.completes\",\n      \"timestamp\": \"2022-04-19T11:50:39+00:00\"\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://dcs.adobedc.net/collection/cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626?synchronousValidation=true",
+					"protocol": "https",
+					"host": [
+						"dcs",
+						"adobedc",
+						"net"
+					],
+					"path": [
+						"collection",
+						"cc0436b6260b6f731c1de2b512ef36b6beb0c6d3212f59fdfa82cae652234626"
+					],
+					"query": [
+						{
+							"key": "synchronousValidation",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

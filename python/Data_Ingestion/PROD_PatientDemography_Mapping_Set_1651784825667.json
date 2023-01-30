@@ -1,0 +1,523 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "contentType": "1.0"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_STAT",
+            "destination": "_abbviecommercial.hipaa.status",
+            "expressionAttributes": [
+                "HIPAA_STAT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_STAT",
+            "destinationXdmPath": "_abbviecommercial.hipaa.status"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_CNST_TYPE",
+            "destination": "_abbviecommercial.hipaa.consentSourceType",
+            "expressionAttributes": [
+                "HIPAA_CNST_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_CNST_TYPE",
+            "destinationXdmPath": "_abbviecommercial.hipaa.consentSourceType"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "date(HIPAA_OPT_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destination": "_abbviecommercial.hipaa.optOutDate",
+            "expressionAttributes": [
+                "date(HIPAA_OPT_TS, \"yyyy-MM-dd HH:mm:ss\")"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(HIPAA_OPT_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destinationXdmPath": "_abbviecommercial.hipaa.optOutDate"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_SOURCE",
+            "destination": "_abbviecommercial.hipaa.channelSource",
+            "expressionAttributes": [
+                "HIPAA_SOURCE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_SOURCE",
+            "destinationXdmPath": "_abbviecommercial.hipaa.channelSource"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_EXPR",
+            "destination": "_abbviecommercial.hipaa.consentExpirationDate",
+            "expressionAttributes": [
+                "HIPAA_OPT_EXPR"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_EXPR",
+            "destinationXdmPath": "_abbviecommercial.hipaa.consentExpirationDate"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_VAL",
+            "destination": "_abbviecommercial.hipaa.authorization",
+            "expressionAttributes": [
+                "HIPAA_OPT_VAL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_VAL",
+            "destinationXdmPath": "_abbviecommercial.hipaa.authorization"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (MOBL_PHONE == null || \"\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \"mobile\")",
+            "destination": "_abbviecommercial.contactDetails.mobilePhone.type",
+            "expressionAttributes": [
+                "MOBL_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (MOBL_PHONE == null || \"\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \"mobile\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.mobilePhone.type"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE",
+            "destination": "_abbviecommercial.contactDetails.mobilePhone.number",
+            "expressionAttributes": [
+                "MOBL_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.mobilePhone.number"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (HOME_PHONE == null || \"\".equalsIgnoreCase(trim(HOME_PHONE)), null, \"home\")",
+            "destination": "_abbviecommercial.contactDetails.homePhone.type",
+            "expressionAttributes": [
+                "HOME_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (HOME_PHONE == null || \"\".equalsIgnoreCase(trim(HOME_PHONE)), null, \"home\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homePhone.type"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE",
+            "destination": "_abbviecommercial.contactDetails.homePhone.number",
+            "expressionAttributes": [
+                "HOME_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homePhone.number"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \n\"work\"), \"personal\")",
+            "destination": "_abbviecommercial.contactDetails.personalEmail.type",
+            "expressionAttributes": [
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \n\"work\"), \"personal\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.personalEmail.type"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))",
+            "destination": "_abbviecommercial.contactDetails.personalEmail.address",
+            "expressionAttributes": [
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.personalEmail.address"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (WORK_ADDR_1 == null || \"\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \"work\")",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressType",
+            "expressionAttributes": [
+                "WORK_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (WORK_ADDR_1 == null || \"\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \"work\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "trim(WORK_ZIP)",
+            "destination": "_abbviecommercial.contactDetails.workAddress.zipCode",
+            "expressionAttributes": [
+                "WORK_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "trim(WORK_ZIP)",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.zipCode"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_STATE))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.state",
+            "expressionAttributes": [
+                "WORK_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_STATE))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.state"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_CITY))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.city",
+            "expressionAttributes": [
+                "WORK_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_CITY))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.city"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_ADDR_2))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressLine2",
+            "expressionAttributes": [
+                "WORK_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_ADDR_2))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressLine2"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_ADDR_1))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressLine1",
+            "expressionAttributes": [
+                "WORK_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_ADDR_1))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressLine1"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (HOME_ADDR_1 == null || \"\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \"home\")",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressType",
+            "expressionAttributes": [
+                "HOME_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (HOME_ADDR_1 == null || \"\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \"home\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "trim(HOME_ZIP)",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.zipCode",
+            "expressionAttributes": [
+                "HOME_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "trim(HOME_ZIP)",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.zipCode"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_STATE))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.state",
+            "expressionAttributes": [
+                "HOME_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_STATE))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.state"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_CITY))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.city",
+            "expressionAttributes": [
+                "HOME_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_CITY))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.city"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_ADDR_2))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressLine2",
+            "expressionAttributes": [
+                "HOME_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_ADDR_2))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressLine2"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_ADDR_1))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressLine1",
+            "expressionAttributes": [
+                "HOME_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_ADDR_1))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressLine1"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(iif(PREF_LANG_CD == null || \"\".equalsIgnoreCase(trim(PREF_LANG_CD)), \"EMPTY\", \nupper(trim(PREF_LANG_CD))), \"EN\", \"en\", \"ES\", \"es\", \"EMPTY\", null, \"other\")",
+            "destination": "_abbviecommercial.patientPreferences.preferredLanguage",
+            "expressionAttributes": [
+                "PREF_LANG_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(iif(PREF_LANG_CD == null || \"\".equalsIgnoreCase(trim(PREF_LANG_CD)), \"EMPTY\", \nupper(trim(PREF_LANG_CD))), \"EN\", \"en\", \"ES\", \"es\", \"EMPTY\", null, \"other\")",
+            "destinationXdmPath": "_abbviecommercial.patientPreferences.preferredLanguage"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(upper(trim(GNDR_CD)), \"M\", \"male\", \"F\", \"female\", \"O\", \"other\", \"U\", \"unknown\", null)",
+            "destination": "_abbviecommercial.personDetails.gender",
+            "expressionAttributes": [
+                "GNDR_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(upper(trim(GNDR_CD)), \"M\", \"male\", \"F\", \"female\", \"O\", \"other\", \"U\", \"unknown\", null)",
+            "destinationXdmPath": "_abbviecommercial.personDetails.gender"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))",
+            "destination": "_abbviecommercial.personDetails.birthYear",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthYear"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \"-\", substr(BIRTH_DT, 5,2)))",
+            "destination": "_abbviecommercial.personDetails.birthDayAndMonth",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \"-\", substr(BIRTH_DT, 5,2)))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthDayAndMonth"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "BIRTH_DT",
+            "destination": "_abbviecommercial.personDetails.birthDate",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "BIRTH_DT",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthDate"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(concat(trim(FRST_NM), \" \", iif(MID_NM == null, \"\", concat(trim(MID_NM), \" \")), trim(LAST_NM)))",
+            "destination": "_abbviecommercial.personDetails.name",
+            "expressionAttributes": [
+                "LAST_NM",
+                "FRST_NM",
+                "MID_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(concat(trim(FRST_NM), \" \", iif(MID_NM == null, \"\", concat(trim(MID_NM), \" \")), trim(LAST_NM)))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.name"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(LAST_NM))",
+            "destination": "_abbviecommercial.personDetails.lastName",
+            "expressionAttributes": [
+                "LAST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(LAST_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.lastName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(MID_NM))",
+            "destination": "_abbviecommercial.personDetails.middleName",
+            "expressionAttributes": [
+                "MID_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(MID_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.middleName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(FRST_NM))",
+            "destination": "_abbviecommercial.personDetails.firstName",
+            "expressionAttributes": [
+                "FRST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(FRST_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.firstName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))",
+            "destination": "_abbviecommercial.abbvieIdentities.hashedEmail",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.hashedEmail"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", \"\")), \nsha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", MKT_CLOUD_ID)))",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "PRM_ID",
+                "MKT_CLOUD_ID",
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", \"\")), \nsha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", MKT_CLOUD_ID)))",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)",
+            "destination": "_abbviecommercial.abbvieIdentities.ecid",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "MKT_CLOUD_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.ecid"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRM_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.prmID",
+            "expressionAttributes": [
+                "PRM_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRM_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.prmID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "1.0",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+        "contentType": "1.0"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7"
+}

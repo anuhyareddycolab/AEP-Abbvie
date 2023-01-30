@@ -1,0 +1,286 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxBin == \"NULL\" || RxBin == \"NA\", nullify(),RxBin ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxBin",
+            "expressionAttributes": [
+                "RxBin"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxBin == \"NULL\" || RxBin == \"NA\", nullify(),RxBin ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxBin"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxPcn == \"NULL\" || RxPcn == \"NA\", nullify(),RxPcn ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxPCN",
+            "expressionAttributes": [
+                "RxPcn"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxPcn == \"NULL\" || RxPcn == \"NA\", nullify(),RxPcn ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxPCN"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCompanyName == \"NULL\" || InsuranceCompanyName == \"NA\", nullify(),InsuranceCompanyName )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyName",
+            "expressionAttributes": [
+                "InsuranceCompanyName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCompanyName == \"NULL\" || InsuranceCompanyName == \"NA\", nullify(),InsuranceCompanyName )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCardType == \"NULL\" || InsuranceCardType == \"NA\", nullify(),InsuranceCardType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCardType",
+            "expressionAttributes": [
+                "InsuranceCardType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCardType == \"NULL\" || InsuranceCardType == \"NA\", nullify(),InsuranceCardType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCardType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCompanyType == \"NULL\" || InsuranceCompanyType == \"NA\", nullify(),InsuranceCompanyType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyType",
+            "expressionAttributes": [
+                "InsuranceCompanyType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCompanyType == \"NULL\" || InsuranceCompanyType == \"NA\", nullify(),InsuranceCompanyType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( GovernmentInsuranceType == \"NULL\" || GovernmentInsuranceType == \"NA\", nullify(),GovernmentInsuranceType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.governmentInsuranceType",
+            "expressionAttributes": [
+                "GovernmentInsuranceType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( GovernmentInsuranceType == \"NULL\" || GovernmentInsuranceType == \"NA\", nullify(),GovernmentInsuranceType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.governmentInsuranceType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PlanName == \"NULL\" || PlanName == \"NA\", nullify(),PlanName )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.planName",
+            "expressionAttributes": [
+                "PlanName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PlanName == \"NULL\" || PlanName == \"NA\", nullify(),PlanName )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.planName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PlanType == \"NULL\" || PlanType == \"NA\", nullify(),PlanType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.planType",
+            "expressionAttributes": [
+                "PlanType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PlanType == \"NULL\" || PlanType == \"NA\", nullify(),PlanType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.planType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PrescriptionMemberId == \"NULL\" || PrescriptionMemberId == \"NA\", nullify(),PrescriptionMemberId )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.prescriptionMemberId",
+            "expressionAttributes": [
+                "PrescriptionMemberId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PrescriptionMemberId == \"NULL\" || PrescriptionMemberId == \"NA\", nullify(),PrescriptionMemberId )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.prescriptionMemberId"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( IsCopaySavingsEligible == \"NULL\" || IsCopaySavingsEligible == \"NA\", nullify(),IsCopaySavingsEligible )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.isCopaySavingsEligible",
+            "expressionAttributes": [
+                "IsCopaySavingsEligible"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( IsCopaySavingsEligible == \"NULL\" || IsCopaySavingsEligible == \"NA\", nullify(),IsCopaySavingsEligible )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.isCopaySavingsEligible"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( ProductCoverageStatus == \"NULL\" || ProductCoverageStatus == \"NA\", nullify(),ProductCoverageStatus )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.productCoverageStatus",
+            "expressionAttributes": [
+                "ProductCoverageStatus"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( ProductCoverageStatus == \"NULL\" || ProductCoverageStatus == \"NA\", nullify(),ProductCoverageStatus )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.productCoverageStatus"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxGrp == \"NULL\" || RxGrp == \"NA\", nullify(),RxGrp ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxGrp",
+            "expressionAttributes": [
+                "RxGrp"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxGrp == \"NULL\" || RxGrp == \"NA\", nullify(),RxGrp ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxGrp"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "now()",
+            "destination": "timestamp",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "now()",
+            "destinationXdmPath": "timestamp"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "uuid()",
+            "destination": "_id",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "uuid()",
+            "destinationXdmPath": "_id"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "NDC",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.ndc",
+            "expressionAttributes": [
+                "NDC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "NDC",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.ndc"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "sha256(IndivId)",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "IndivId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "sha256(IndivId)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "IndivId",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "IndivId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "IndivId",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "DrugName",
+            "destination": "_abbviecommercial.channelSource.drugName",
+            "expressionAttributes": [
+                "DrugName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "DrugName",
+            "destinationXdmPath": "_abbviecommercial.channelSource.drugName"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "GroupNumber",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.groupNumber",
+            "expressionAttributes": [
+                "GroupNumber"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "GroupNumber",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.groupNumber"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "DisadvantagedAccessReason",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.disadvantagedAccessReason",
+            "expressionAttributes": [
+                "DisadvantagedAccessReason"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "DisadvantagedAccessReason",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.disadvantagedAccessReason"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MedicalMemberId",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.medicalMemberId",
+            "expressionAttributes": [
+                "MedicalMemberId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MedicalMemberId",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.medicalMemberId"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c"
+}

@@ -1,0 +1,175 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/58eda44834adf1f1e2b0f1d722c5aa1eb21598ae5f20bad3",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "OPT_VAL_CD",
+            "destination": "_abbviecommercial.optData.OPT_VAL_CD",
+            "expressionAttributes": [
+                "OPT_VAL_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "OPT_VAL_CD",
+            "destinationXdmPath": "_abbviecommercial.optData.OPT_VAL_CD"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRIVACYREVOCATION",
+            "destination": "_abbviecommercial.optData.PRIVACYREVOCATION",
+            "expressionAttributes": [
+                "PRIVACYREVOCATION"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRIVACYREVOCATION",
+            "destinationXdmPath": "_abbviecommercial.optData.PRIVACYREVOCATION"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "ECID",
+            "destination": "_abbviecommercial.optData.ECID",
+            "expressionAttributes": [
+                "ECID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "ECID",
+            "destinationXdmPath": "_abbviecommercial.optData.ECID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "OPT_ID",
+            "destination": "_abbviecommercial.optData.OPT_ID",
+            "expressionAttributes": [
+                "OPT_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "OPT_ID",
+            "destinationXdmPath": "_abbviecommercial.optData.OPT_ID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RSP_SRC_DSC",
+            "destination": "_abbviecommercial.optData.RSP_SRC_DSC",
+            "expressionAttributes": [
+                "RSP_SRC_DSC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RSP_SRC_DSC",
+            "destinationXdmPath": "_abbviecommercial.optData.RSP_SRC_DSC"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRMID",
+            "destination": "_abbviecommercial.optData.PRMID",
+            "expressionAttributes": [
+                "PRMID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRMID",
+            "destinationXdmPath": "_abbviecommercial.optData.PRMID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "UUID",
+            "destination": "_abbviecommercial.optData.UUID",
+            "expressionAttributes": [
+                "UUID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "UUID",
+            "destinationXdmPath": "_abbviecommercial.optData.UUID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.optData.INDIV_ID",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.optData.INDIV_ID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "OPTDATE",
+            "destination": "_abbviecommercial.optData.OPTDATE",
+            "expressionAttributes": [
+                "OPTDATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "OPTDATE",
+            "destinationXdmPath": "_abbviecommercial.optData.OPTDATE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PROD_NM",
+            "destination": "_abbviecommercial.optData.PROD_NM",
+            "expressionAttributes": [
+                "PROD_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PROD_NM",
+            "destinationXdmPath": "_abbviecommercial.optData.PROD_NM"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PROMO_RSP_ID",
+            "destination": "_abbviecommercial.optData.PROMO_RSP_ID",
+            "expressionAttributes": [
+                "PROMO_RSP_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PROMO_RSP_ID",
+            "destinationXdmPath": "_abbviecommercial.optData.PROMO_RSP_ID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "OPTCODE",
+            "destination": "_abbviecommercial.optData.OPTCODE",
+            "expressionAttributes": [
+                "OPTCODE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "OPTCODE",
+            "destinationXdmPath": "_abbviecommercial.optData.OPTCODE"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/58eda44834adf1f1e2b0f1d722c5aa1eb21598ae5f20bad3",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/58eda44834adf1f1e2b0f1d722c5aa1eb21598ae5f20bad3"
+}

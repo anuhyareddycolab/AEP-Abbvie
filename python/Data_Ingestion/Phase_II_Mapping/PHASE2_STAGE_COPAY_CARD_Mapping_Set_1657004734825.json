@@ -1,0 +1,159 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "date(ENROLLMENTDATE, \"yyyy-MM-dd HH.mm.ss\")",
+            "destination": "timestamp",
+            "expressionAttributes": [
+                "ENROLLMENTDATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(ENROLLMENTDATE, \"yyyy-MM-dd HH.mm.ss\")",
+            "destinationXdmPath": "timestamp"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(upper(trim(DRUGNAME)), \"UPA\", \"RINVOQ\", upper(DRUGNAME))",
+            "destination": "_abbviecommercial.channelSource.drugName",
+            "expressionAttributes": [
+                "DRUGNAME"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(upper(trim(DRUGNAME)), \"UPA\", \"RINVOQ\", upper(DRUGNAME))",
+            "destinationXdmPath": "_abbviecommercial.channelSource.drugName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(matches_regex(PRMID, \"^[0-9]+$\"), PRMID, nullify())",
+            "destination": "_abbviecommercial.abbvieIdentities.prmID",
+            "expressionAttributes": [
+                "PRMID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(matches_regex(PRMID, \"^[0-9]+$\"), PRMID, nullify())",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.prmID"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "sha256(INDIVID)",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "INDIVID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "sha256(INDIVID)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "uuid()",
+            "destination": "_id",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "uuid()",
+            "destinationXdmPath": "_id"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "SUF",
+            "destination": "_abbviecommercial.copayCard.suf",
+            "expressionAttributes": [
+                "SUF"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "SUF",
+            "destinationXdmPath": "_abbviecommercial.copayCard.suf"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "SAVINGSCARDID",
+            "destination": "_abbviecommercial.copayCard.savingsCardId",
+            "expressionAttributes": [
+                "SAVINGSCARDID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "SAVINGSCARDID",
+            "destinationXdmPath": "_abbviecommercial.copayCard.savingsCardId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RXPCN",
+            "destination": "_abbviecommercial.copayCard.rxPCN",
+            "expressionAttributes": [
+                "RXPCN"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RXPCN",
+            "destinationXdmPath": "_abbviecommercial.copayCard.rxPCN"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RXGROUP",
+            "destination": "_abbviecommercial.copayCard.rxGroup",
+            "expressionAttributes": [
+                "RXGROUP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RXGROUP",
+            "destinationXdmPath": "_abbviecommercial.copayCard.rxGroup"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RXBIN",
+            "destination": "_abbviecommercial.copayCard.rxBIN",
+            "expressionAttributes": [
+                "RXBIN"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RXBIN",
+            "destinationXdmPath": "_abbviecommercial.copayCard.rxBIN"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIVID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "INDIVID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIVID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad"
+}

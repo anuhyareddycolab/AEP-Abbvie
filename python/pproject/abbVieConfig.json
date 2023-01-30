@@ -1,0 +1,296 @@
+{
+  "abbVie": {
+    "instanceDetails" : {
+      "dev": {
+        "ims_org" : "C2C7C77B56E2C5147F000101@AdobeOrg",
+        "api_key" : "88af8f01811e4282b14c6873f363dedc",
+        "secret" : "p8e-VZKtNqTTBzsvqCwIHrUkgiN31vgm7BJZ",
+        "technical_account_id" : "E56B510A6147F1DD0A495ED1@techacct.adobe.com",
+        "private_key_path" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\API_Keys\\dev_config\\private.key"
+      },
+      "prod": {
+        "ims_org" : "C2C7C77B56E2C5147F000101@AdobeOrg",
+        "api_key" : "9d5c3730c7584d7e8112a67a88986ebc",
+        "secret" : "p8e-2E1fId8dZUv3z3dGufmWmKMmgiy28KzD",
+        "technical_account_id" : "0AB01D15627D65B90A495FCF@techacct.adobe.com",
+        "private_key_path" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\API_Keys\\prod_config\\private.key"
+      }
+    },
+    "commonDetails" : {
+      "SFTP" : {
+        "sourceConnectionSpecId" : "b7bf2577-4520-42c9-bae9-cad01560f7bc",
+        "targetConnectionSpecId" : "c604ff05-7f1a-43c0-8e18-33bf874cb11c"
+      },
+      "AWSS3" : {
+        "sourceConnectionSpecId" : "ecadc60c-7455-4d87-84dc-2a0e293d997b",
+        "targetConnectionSpecId" : "c604ff05-7f1a-43c0-8e18-33bf874cb11c"
+      }
+    },
+    "dataload": {
+      "abbvie-development" : {
+        "sftpSourceConnectionId" : "c70825b9-3f04-4d28-8131-632e4a392e59",
+        "datasetDetails" : {
+          "PATIENT_DEMOGRAPHY" : {
+            "datasetId" : "625ef6603d67b019491a68d9",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_PatientDemography_Mapping_Set_1651784825667.json"
+          },
+          "REGISTRATION" : {
+            "datasetId" : "625ef5898a7f391949a8fc10",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_REGISTRATION_Mapping_Set_1654237574691.json"
+          },
+          "REGSURVEY" : {
+            "datasetId" : "6259cd28b221cd194a83855d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_REG_SURVEY_Mapping_Set_1652458300843.json"
+          },
+          "ENGAGEMENTSURVEY" : {
+            "datasetId" : "6259cd28b221cd194a83855d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_ENGAGEMENTSURVEY_Mapping_Set_1653642445506.json"
+          },
+          "OPT" : {
+            "datasetId" : "625ef5a5d2840c19495b518d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/7b13553e7e2572d3807ef2372a90add2dccee699a8c1312b",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_OPTEVENT_Mapping_Set_1651852149915.json"
+          },
+          "BenefitVerification" : {
+            "datasetId" : "623b76ff07c197194b8913ce",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_BenefitVerification_Mapping_Set_451bb82d968b4aeb9213c35413d8e63b.json"
+          }
+        },
+        "inputFiles" : {
+          "PATIENT_DEMOGRAPHY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_DEMOGRAPHIC_CDP_20220422010203_138813.csv",
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_DEMOGRAPHIC_CDP_20220422010203_138813.csv"
+          ],
+          "REGISTRATION" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGISTRATION_CDP_20220422010203_335938.csv"
+          ],
+          "REGSURVEY" : [
+            "/ORG-PS-CDP-NP/Backup/ProcessedFiles/processed_reg_survey_data.csv"
+          ],
+          "ENGAGEMENTSURVEY" : [
+            "/ORG-PS-CDP-NP/Backup/ProcessedFiles/processed_engagement_survey_data.csv"
+          ],
+          "OPT" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_OPT_CDP_20220422010203_1725949.csv"
+          ],
+          "BenefitVerification" : [
+            "/ORG-PS-CDP-NP/SPOE/Initial_Data_Load/RINVOQ-CDP.csv"
+          ]
+        }
+
+      },
+      "abbvie-staging" : {
+        "sftpSourceConnectionId" : "0434c183-63ad-4d49-a359-58e88e67d9fa",
+        "datasetDetails" : {
+          "PATIENT_DEMOGRAPHY" : {
+            "datasetId" : "626382b2ecd795194a85be17",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\phase2_dev_PatientDemographysurvey3Questions_Mapping_Set_1651784825667.json"
+          },
+          "REGISTRATION" : {
+            "datasetId" : "6263830358a78f1949e0b516",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_Registration_Mapping_Set_1651847214772.json"
+          },
+          "REGSURVEY" : {
+            "datasetId" : "626383649e5a1e19497feffd",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_REGSURVEY_Mapping_Set_1651852178363.json"
+          },
+          "ENGAGEMENTSURVEY" : {
+            "datasetId" : "626383649e5a1e19497feffd",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_ENGAGEMENTSURVEY_Mapping_Set_1651852712980.json"
+          },
+          "OPT" : {
+            "datasetId" : "6284fa535b76f9194935f44d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/7b13553e7e2572d3807ef2372a90add2dccee699a8c1312b",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_OPTEVENT_Mapping_Set_1651852149915.json"
+          },
+          "BenefitVerification" : {
+            "datasetId" : "6274418a5c01de19492f7d6e",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_BenefitVerification_Mapping_Set_451bb82d968b4aeb9213c35413d8e63b.json"
+          },
+          "ORDER_FULFILL" : {
+             "datasetId" : "62744148c9e48f194958424d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_ORDER_FULFILL_Mapping_Set_1657567157924.json",
+            "columnDelimiter" : "|"
+          },
+          "COPAY_CARD" : {
+             "datasetId" : "62744148c9e48f194958424d",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_COPAY_CARD_Mapping_Set_1657004734825.json"
+          },
+          "AgentInteractions" : {
+             "datasetId" : "63216e23e627e11c06689064",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/1a6011ae2e4c817605e5e69ef95a9ed8d436a7765dce3d37",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\agent_interactions_mapping.json"
+          }
+        },
+        "inputFiles" : {
+          "PATIENT_DEMOGRAPHY" : [
+            "/ORG-PS-CDP-NP/Backup/ProcessedFiles/processed_patient_demo_final_dev1.csv"
+          ],
+          "REGISTRATION" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGISTRATION_CDP_20220422010203_335938.csv"
+          ],
+          "REGSURVEY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGSURVEY_CDP_20220422010203_2081315.csv"
+          ],
+          "ENGAGEMENTSURVEY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_ENGAGEMENTSRVY_CDP_20220422010203_1488379.csv"
+          ],
+          "OPT" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_OPT_CDP_20220422010203_1725949.csv"
+          ],
+          "BenefitVerification" : [
+            "/ORG-PS-CDP-NP/SPOE/Initial_Data_Load/SKYRIZI-CDP.csv"
+          ],
+          "ORDER_FULFILL" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/OrderFulfillmentHUM.csv"
+          ],
+          "COPAY_CARD" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_copay_card_enrollment_20220506.csv"
+          ],
+          "AgentInteractions" : [
+            "/ORG-PS-CDP-NP/CDLdata/Interaction/Agent-Interactions-Sample_original - Copy.csv"
+          ]
+        }
+
+      },
+      "acs-dev" : {
+        "sftpSourceConnectionId" : "48460874-2dc4-483a-99ec-ff36cd3899d5",
+        "datasetDetails" : {
+          "PATIENT_DEMOGRAPHY" : {
+            "datasetId" : "62790bd34000f61949bee303",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_PatientDemography_Mapping_Set_1651784825667.json"
+          },
+          "REGISTRATION" : {
+            "datasetId" : "6263830358a78f1949e0b516",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_Registration_Mapping_Set_1651847214772.json"
+          },
+          "REGSURVEY" : {
+            "datasetId" : "626383649e5a1e19497feffd",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_REGSURVEY_Mapping_Set_1651852178363.json"
+          },
+          "ENGAGEMENTSURVEY" : {
+            "datasetId" : "626383649e5a1e19497feffd",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_ENGAGEMENTSURVEY_Mapping_Set_1651852712980.json"
+          },
+          "OPT" : {
+            "datasetId" : "6263832d7c6cec194a51635e",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/7b13553e7e2572d3807ef2372a90add2dccee699a8c1312b",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_OPTEVENT_Mapping_Set_1651852149915.json"
+          }
+        },
+        "inputFiles" : {
+          "PATIENT_DEMOGRAPHY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_DEMOGRAPHIC_CDP_20220422010203_138813.csv"
+          ],
+          "REGISTRATION" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGISTRATION_CDP_20220422010203_335938.csv"
+          ],
+          "REGSURVEY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGSURVEY_CDP_20220422010203_2081315.csv"
+          ],
+          "ENGAGEMENTSURVEY" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_ENGAGEMENTSRVY_CDP_20220422010203_1488379.csv"
+          ],
+          "OPT" : [
+            "/ORG-PS-CDP-NP/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_OPT_CDP_20220422010203_1725949.csv"
+          ]
+        }
+
+
+
+      },
+      "prod" : {
+        "sftpSourceConnectionId": "96b3c3c1-6a2f-4427-8b7a-256dcf44cb43",
+        "datasetDetails": {
+          "PATIENT_DEMOGRAPHY": {
+            "datasetId": "6273fda7365db8194a9a41c2",
+            "schemaId": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "mappingFilePath": "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_PatientDemography_Mapping_Set_1651784825667.json"
+          },
+          "REGISTRATION": {
+            "datasetId": "6273ff2d325ac6194916097c",
+            "schemaId": "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+            "mappingFilePath": "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_Registration_Mapping_Set_1651847214772.json"
+          },
+          "REGSURVEY": {
+            "datasetId": "62bd10935b277e1c099fb6cf",
+            "schemaId": "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath": "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_REGSURVEY_Mapping_Set_1651852178363.json"
+          },
+          "ENGAGEMENTSURVEY": {
+            "datasetId": "62bd4fe9264d731c07d2730e",
+            "schemaId": "https://ns.adobe.com/abbviecommercial/schemas/9a44614e906f80ff029a570b9bb5cbb1845143539dfacd5",
+            "mappingFilePath": "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_ENGAGEMENTSURVEY_Mapping_Set_1651852712980.json"
+          },
+          "OPT": {
+            "datasetId": "62bc396cfc6e521c07a2f6ff",
+            "schemaId": "https://ns.adobe.com/abbviecommercial/schemas/7b13553e7e2572d3807ef2372a90add2dccee699a8c1312b",
+            "mappingFilePath": "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PROD_OPTEVENT_Mapping_Set_1651852149915.json"
+          },
+          "BenefitVerification" : {
+            "datasetId" : "62c461487f00111c07d60c80",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_BenefitVerification_Mapping_Set_451bb82d968b4aeb9213c35413d8e63b.json"
+          },
+          "COPAY_CARD" : {
+            "datasetId" : "62c461fd9fad991c07fdfd88",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_COPAY_CARD_Mapping_Set_1657004734825.json"
+          },
+          "ORDER_FULFILL" : {
+            "datasetId" : "62c461fd9fad991c07fdfd88",
+            "schemaId" : "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "mappingFilePath" : "D:\\Official\\AEP\\Abbvie\\python\\Data_Ingestion\\PHASE2_STAGE_ORDER_FULFILL_Mapping_Set_1657567157924.json"
+
+          }
+        },
+        "inputFiles": {
+          "PATIENT_DEMOGRAPHY": [
+            "/ORG-PS-CDP-P/FEB_02/ABOT_EPSI_DEMOGRAPHIC_CDP_20220126010203_1609176.csv"
+          ],
+          "REGISTRATION": [
+            "/ORG-PS-CDP-P/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGISTRATION_CDP_20220422010203_335938.csv"
+          ],
+          "REGSURVEY": [
+            "/ORG-PS-CDP-P/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_REGSURVEY_CDP_20220422010203_2081315.csv"
+          ],
+          "ENGAGEMENTSURVEY": [
+            "/ORG-PS-CDP-P/FEB_02/HUM3_ABOT_EPSI_ENGAGEMENTSRVY_CDP_20220127010203_6000000.csv",
+            "/ORG-PS-CDP-P/FEB_02/HUM4_ABOT_EPSI_ENGAGEMENTSRVY_CDP_20220127010203_3432000.csv"
+          ],
+          "OPT": [
+            "/ORG-PS-CDP-P/Epsilon/Initial_Data_Load/TEST_ABOT_EPSI_OPT_CDP_20220422010203_1725949.csv"
+          ],
+          "ORDER_FULFILL": [
+            "/ORG-PS-CDP-P/EPSILON/Initial_Data_Load/ALL_ABOT_EPSI_FULFILLMENT_CDP_20220710010203_1431062.csv"
+          ],
+          "BV_IP": [
+            "/ORG-PS-CDP-P/SPOE/Initial_Data_Load/SKYRIZI-CDP_BV-Insurance_20220706_80553.csv",
+            "/ORG-PS-CDP-P/SPOE/Initial_Data_Load/RINVOQ-CDP_BV-Insurance_20220706_34813.csv",
+            "/ORG-PS-CDP-P/SPOE/Initial_Data_Load/HUMIRA-CDP_BV-Insurance_20220706_746947.csv"
+          ],
+          "COPAY_CARD": [
+            "/ORG-PS-CDP-P/EPSILON/Initial_Data_Load/ALL_ABOT_EPSI_COPAY_CDP_20220710010203_1447795.csv"
+          ]
+        }
+      }
+    }
+
+  }
+}

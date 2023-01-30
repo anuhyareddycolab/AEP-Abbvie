@@ -1,0 +1,734 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/9a4178c9ff58e681153c24c95c211afc6addf13fa0eec4b",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_PHONE_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.WORK_PHONE_LAST_TS",
+            "expressionAttributes": [
+                "WORK_PHONE_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_PHONE_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_PHONE_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PATIENT_CREATE_DT",
+            "destination": "_abbviecommercial.PatientDemography.PATIENT_CREATE_DT",
+            "expressionAttributes": [
+                "PATIENT_CREATE_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PATIENT_CREATE_DT",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.PATIENT_CREATE_DT"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ADDR_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ADDR_TYPE",
+            "expressionAttributes": [
+                "WORK_ADDR_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ADDR_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ADDR_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_PHONE_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.WORK_PHONE_ACTIVE_IND",
+            "expressionAttributes": [
+                "WORK_PHONE_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_PHONE_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_PHONE_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_EMAIL",
+            "destination": "_abbviecommercial.PatientDemography.HOME_EMAIL",
+            "expressionAttributes": [
+                "HOME_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_EMAIL",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_EMAIL"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_CITY",
+            "destination": "_abbviecommercial.PatientDemography.WORK_CITY",
+            "expressionAttributes": [
+                "WORK_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_CITY",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_CITY"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "FRST_NM",
+            "destination": "_abbviecommercial.PatientDemography.FRST_NM",
+            "expressionAttributes": [
+                "FRST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "FRST_NM",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.FRST_NM"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_VAL",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_OPT_VAL",
+            "expressionAttributes": [
+                "HIPAA_OPT_VAL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_VAL",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_OPT_VAL"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_STAT",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_STAT",
+            "expressionAttributes": [
+                "HIPAA_STAT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_STAT",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_STAT"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HAS_CAREGIVER",
+            "destination": "_abbviecommercial.PatientDemography.HAS_CAREGIVER",
+            "expressionAttributes": [
+                "HAS_CAREGIVER"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HAS_CAREGIVER",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HAS_CAREGIVER"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ADDR_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ADDR_LAST_TS",
+            "expressionAttributes": [
+                "WORK_ADDR_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ADDR_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ADDR_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.PatientDemography.INDIV_ID",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.INDIV_ID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ZIP",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ZIP",
+            "expressionAttributes": [
+                "WORK_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ZIP",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ZIP"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ZIP",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ZIP",
+            "expressionAttributes": [
+                "HOME_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ZIP",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ZIP"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_EMAIL_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.WORK_EMAIL_TYPE",
+            "expressionAttributes": [
+                "WORK_EMAIL_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_EMAIL_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_EMAIL_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_PHONE_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.WORK_PHONE_TYPE",
+            "expressionAttributes": [
+                "WORK_PHONE_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_PHONE_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_PHONE_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ADDR_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ADDR_TYPE",
+            "expressionAttributes": [
+                "HOME_ADDR_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ADDR_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ADDR_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_CNST_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_CNST_TYPE",
+            "expressionAttributes": [
+                "HIPAA_CNST_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_CNST_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_CNST_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.HOME_PHONE_TYPE",
+            "expressionAttributes": [
+                "HOME_PHONE_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_PHONE_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ADDR_2",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ADDR_2",
+            "expressionAttributes": [
+                "WORK_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ADDR_2",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ADDR_2"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ADDR_1",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ADDR_1",
+            "expressionAttributes": [
+                "WORK_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ADDR_1",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ADDR_1"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PREF_LANG_CD",
+            "destination": "_abbviecommercial.PatientDemography.PREF_LANG_CD",
+            "expressionAttributes": [
+                "PREF_LANG_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PREF_LANG_CD",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.PREF_LANG_CD"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "USER_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.USER_TYPE",
+            "expressionAttributes": [
+                "USER_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "USER_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.USER_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ADDR_2",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ADDR_2",
+            "expressionAttributes": [
+                "HOME_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ADDR_2",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ADDR_2"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_EMAIL_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.WORK_EMAIL_LAST_TS",
+            "expressionAttributes": [
+                "WORK_EMAIL_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_EMAIL_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_EMAIL_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.HOME_PHONE_ACTIVE_IND",
+            "expressionAttributes": [
+                "HOME_PHONE_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_PHONE_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MID_NM",
+            "destination": "_abbviecommercial.PatientDemography.MID_NM",
+            "expressionAttributes": [
+                "MID_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MID_NM",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MID_NM"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_STATE",
+            "destination": "_abbviecommercial.PatientDemography.WORK_STATE",
+            "expressionAttributes": [
+                "WORK_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_STATE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_STATE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ADDR_1",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ADDR_1",
+            "expressionAttributes": [
+                "HOME_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ADDR_1",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ADDR_1"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ACTIVE_IND",
+            "expressionAttributes": [
+                "WORK_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_EMAIL_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.HOME_EMAIL_LAST_TS",
+            "expressionAttributes": [
+                "HOME_EMAIL_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_EMAIL_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_EMAIL_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ACTIVE_IND",
+            "expressionAttributes": [
+                "HOME_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_SOURCE",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_SOURCE",
+            "expressionAttributes": [
+                "HIPAA_SOURCE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_SOURCE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_SOURCE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "BIRTH_DT",
+            "destination": "_abbviecommercial.PatientDemography.BIRTH_DT",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "BIRTH_DT",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.BIRTH_DT"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE",
+            "destination": "_abbviecommercial.PatientDemography.HOME_PHONE",
+            "expressionAttributes": [
+                "HOME_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_PHONE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_ADDR_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.WORK_ADDR_ACTIVE_IND",
+            "expressionAttributes": [
+                "WORK_ADDR_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_ADDR_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_ADDR_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ADDR_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ADDR_LAST_TS",
+            "expressionAttributes": [
+                "HOME_ADDR_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ADDR_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ADDR_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_CITY",
+            "destination": "_abbviecommercial.PatientDemography.HOME_CITY",
+            "expressionAttributes": [
+                "HOME_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_CITY",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_CITY"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_TS",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_OPT_TS",
+            "expressionAttributes": [
+                "HIPAA_OPT_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_OPT_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRM_ID",
+            "destination": "_abbviecommercial.PatientDemography.PRM_ID",
+            "expressionAttributes": [
+                "PRM_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRM_ID",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.PRM_ID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.HOME_PHONE_LAST_TS",
+            "expressionAttributes": [
+                "HOME_PHONE_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_PHONE_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_EMAIL_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.HOME_EMAIL_TYPE",
+            "expressionAttributes": [
+                "HOME_EMAIL_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_EMAIL_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_EMAIL_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_PHONE",
+            "destination": "_abbviecommercial.PatientDemography.WORK_PHONE",
+            "expressionAttributes": [
+                "WORK_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_PHONE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_PHONE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_EXPR",
+            "destination": "_abbviecommercial.PatientDemography.HIPAA_OPT_EXPR",
+            "expressionAttributes": [
+                "HIPAA_OPT_EXPR"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_EXPR",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HIPAA_OPT_EXPR"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PATIENT_LAST_UPDATE_DT",
+            "destination": "_abbviecommercial.PatientDemography.PATIENT_LAST_UPDATE_DT",
+            "expressionAttributes": [
+                "PATIENT_LAST_UPDATE_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PATIENT_LAST_UPDATE_DT",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.PATIENT_LAST_UPDATE_DT"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE_LAST_TS",
+            "destination": "_abbviecommercial.PatientDemography.MOBL_PHONE_LAST_TS",
+            "expressionAttributes": [
+                "MOBL_PHONE_LAST_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE_LAST_TS",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MOBL_PHONE_LAST_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_STATE",
+            "destination": "_abbviecommercial.PatientDemography.HOME_STATE",
+            "expressionAttributes": [
+                "HOME_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_STATE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_STATE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "GNDR_CD",
+            "destination": "_abbviecommercial.PatientDemography.GNDR_CD",
+            "expressionAttributes": [
+                "GNDR_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "GNDR_CD",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.GNDR_CD"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "LAST_NM",
+            "destination": "_abbviecommercial.PatientDemography.LAST_NM",
+            "expressionAttributes": [
+                "LAST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "LAST_NM",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.LAST_NM"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE_TYPE",
+            "destination": "_abbviecommercial.PatientDemography.MOBL_PHONE_TYPE",
+            "expressionAttributes": [
+                "MOBL_PHONE_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE_TYPE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MOBL_PHONE_TYPE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_ACTIVE_ADDR_IND",
+            "destination": "_abbviecommercial.PatientDemography.HOME_ACTIVE_ADDR_IND",
+            "expressionAttributes": [
+                "HOME_ACTIVE_ADDR_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_ACTIVE_ADDR_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.HOME_ACTIVE_ADDR_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE_ACTIVE_IND",
+            "destination": "_abbviecommercial.PatientDemography.MOBL_PHONE_ACTIVE_IND",
+            "expressionAttributes": [
+                "MOBL_PHONE_ACTIVE_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE_ACTIVE_IND",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MOBL_PHONE_ACTIVE_IND"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE",
+            "destination": "_abbviecommercial.PatientDemography.MOBL_PHONE",
+            "expressionAttributes": [
+                "MOBL_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MOBL_PHONE"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "WORK_EMAIL",
+            "destination": "_abbviecommercial.PatientDemography.WORK_EMAIL",
+            "expressionAttributes": [
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "WORK_EMAIL",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.WORK_EMAIL"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "MKT_CLOUD_ID",
+            "destination": "_abbviecommercial.PatientDemography.MKT_CLOUD_ID",
+            "expressionAttributes": [
+                "MKT_CLOUD_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MKT_CLOUD_ID",
+            "destinationXdmPath": "_abbviecommercial.PatientDemography.MKT_CLOUD_ID"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/9a4178c9ff58e681153c24c95c211afc6addf13fa0eec4b",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/9a4178c9ff58e681153c24c95c211afc6addf13fa0eec4b"
+}

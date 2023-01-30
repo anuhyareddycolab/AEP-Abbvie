@@ -1,0 +1,809 @@
+{
+    
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "version": 0,
+            "createdDate": 1654879914369,
+            "modifiedDate": 1654879914369,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(is_empty(HIPAA_OPT_TS),HIPAA_OPT_TS, date(HIPAA_OPT_TS,\"yyyy-mm-dd HH24:MM:SS\"))",
+            "destination": "_abbviecommercial.hipaa.optOutDate",
+            "expressionAttributes": [
+                "HIPAA_OPT_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(is_empty(HIPAA_OPT_TS),HIPAA_OPT_TS, date(HIPAA_OPT_TS,\"yyyy-mm-dd HH24:MM:SS\"))",
+            "destinationXdmPath": "_abbviecommercial.hipaa.optOutDate"
+        },
+        {
+            "id": "ac5c074e245941f69443a06ef3465c54",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "PREF_CALL_TIME",
+            "destination": "_abbviecommercial.patientPreferences.preferredTimeToCall",
+            "expressionAttributes": [
+                "PREF_CALL_TIME"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PREF_CALL_TIME",
+            "destinationXdmPath": "_abbviecommercial.patientPreferences.preferredTimeToCall"
+        },
+        {
+            "id": "2439026319aa492d985159f7fb5df851",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "OK_TO_LEAVE_VM",
+            "destination": "_abbviecommercial.patientPreferences.okToLeaveVoiceMessage",
+            "expressionAttributes": [
+                "OK_TO_LEAVE_VM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "OK_TO_LEAVE_VM",
+            "destinationXdmPath": "_abbviecommercial.patientPreferences.okToLeaveVoiceMessage"
+        },
+        {
+            "id": "c2c83586211f4c26a1a70e107bc21206",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "BEST_TIME_TO_CALL",
+            "destination": "_abbviecommercial.patientPreferences.bestTimeToCall",
+            "expressionAttributes": [
+                "BEST_TIME_TO_CALL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "BEST_TIME_TO_CALL",
+            "destinationXdmPath": "_abbviecommercial.patientPreferences.bestTimeToCall"
+        },
+        {
+            "id": "79838bc8f4f84dbbaf2d731016d47c86",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_STAT",
+            "destination": "_abbviecommercial.hipaa.status",
+            "expressionAttributes": [
+                "HIPAA_STAT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_STAT",
+            "destinationXdmPath": "_abbviecommercial.hipaa.status"
+        },
+        {
+            "id": "89f205c51b394bbca02082ddc6319a0a",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_CNST_TYPE",
+            "destination": "_abbviecommercial.hipaa.consentSourceType",
+            "expressionAttributes": [
+                "HIPAA_CNST_TYPE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_CNST_TYPE",
+            "destinationXdmPath": "_abbviecommercial.hipaa.consentSourceType"
+        },
+        {
+            "id": "c3f1664cb16245ee93722c2cf6576756",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_SOURCE",
+            "destination": "_abbviecommercial.hipaa.channelSource",
+            "expressionAttributes": [
+                "HIPAA_SOURCE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_SOURCE",
+            "destinationXdmPath": "_abbviecommercial.hipaa.channelSource"
+        },
+        {
+            "id": "1c831039a3a94efe90cbacf1fae7a9cd",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_EXPR",
+            "destination": "_abbviecommercial.hipaa.consentExpirationDate",
+            "expressionAttributes": [
+                "HIPAA_OPT_EXPR"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_EXPR",
+            "destinationXdmPath": "_abbviecommercial.hipaa.consentExpirationDate"
+        },
+        {
+            "id": "38cd729b04a74d719d3e13ecc662d1ba",
+            "version": 0,
+            "createdDate": 1654879914370,
+            "modifiedDate": 1654879914370,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HIPAA_OPT_VAL",
+            "destination": "_abbviecommercial.hipaa.authorization",
+            "expressionAttributes": [
+                "HIPAA_OPT_VAL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HIPAA_OPT_VAL",
+            "destinationXdmPath": "_abbviecommercial.hipaa.authorization"
+        },
+        {
+            "id": "2650f045f7084f1693787e293d035480",
+            "version": 0,
+            "createdDate": 1654879914371,
+            "modifiedDate": 1654879914371,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (MOBL_PHONE == null || \"\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \"mobile\")",
+            "destination": "_abbviecommercial.contactDetails.mobilePhone.type",
+            "expressionAttributes": [
+                "MOBL_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (MOBL_PHONE == null || \"\".equalsIgnoreCase(trim(MOBL_PHONE)), null, \"mobile\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.mobilePhone.type"
+        },
+        {
+            "id": "fe32f2cee41e43188c8aecc667307eb5",
+            "version": 0,
+            "createdDate": 1654879914371,
+            "modifiedDate": 1654879914371,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "MOBL_PHONE",
+            "destination": "_abbviecommercial.contactDetails.mobilePhone.number",
+            "expressionAttributes": [
+                "MOBL_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MOBL_PHONE",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.mobilePhone.number"
+        },
+        {
+            "id": "d4b30e44bb2548bab11feb3700e70838",
+            "version": 0,
+            "createdDate": 1654879914371,
+            "modifiedDate": 1654879914371,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (HOME_PHONE == null || \"\".equalsIgnoreCase(trim(HOME_PHONE)), null, \"home\")",
+            "destination": "_abbviecommercial.contactDetails.homePhone.type",
+            "expressionAttributes": [
+                "HOME_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (HOME_PHONE == null || \"\".equalsIgnoreCase(trim(HOME_PHONE)), null, \"home\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homePhone.type"
+        },
+        {
+            "id": "cb281e348810456fad236a0877985e98",
+            "version": 0,
+            "createdDate": 1654879914372,
+            "modifiedDate": 1654879914372,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "HOME_PHONE",
+            "destination": "_abbviecommercial.contactDetails.homePhone.number",
+            "expressionAttributes": [
+                "HOME_PHONE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "HOME_PHONE",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homePhone.number"
+        },
+        {
+            "id": "109717fc00fa494f957048d4b9a73c96",
+            "version": 0,
+            "createdDate": 1654879914372,
+            "modifiedDate": 1654879914372,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \n\"work\"), \"personal\")",
+            "destination": "_abbviecommercial.contactDetails.personalEmail.type",
+            "expressionAttributes": [
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \n\"work\"), \"personal\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.personalEmail.type"
+        },
+        {
+            "id": "fc35f5233b614d3e977a480adedb720a",
+            "version": 0,
+            "createdDate": 1654879914373,
+            "modifiedDate": 1654879914373,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))",
+            "destination": "_abbviecommercial.contactDetails.personalEmail.address",
+            "expressionAttributes": [
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), \niif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, \nlower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.personalEmail.address"
+        },
+        {
+            "id": "b7c641a23b5d4d738ba2fa6a1f70cc3c",
+            "version": 0,
+            "createdDate": 1654879914373,
+            "modifiedDate": 1654879914373,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (WORK_ADDR_1 == null || \"\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \"work\")",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressType",
+            "expressionAttributes": [
+                "WORK_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (WORK_ADDR_1 == null || \"\".equalsIgnoreCase(trim(WORK_ADDR_1)), null, \"work\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressType"
+        },
+        {
+            "id": "5ac6b71e053340cc918361133a2d3866",
+            "version": 0,
+            "createdDate": 1654879914374,
+            "modifiedDate": 1654879914374,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "trim(WORK_ZIP)",
+            "destination": "_abbviecommercial.contactDetails.workAddress.zipCode",
+            "expressionAttributes": [
+                "WORK_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "trim(WORK_ZIP)",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.zipCode"
+        },
+        {
+            "id": "8cde34adb7e34a47804ea9a4fd98992e",
+            "version": 0,
+            "createdDate": 1654879914374,
+            "modifiedDate": 1654879914374,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_STATE))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.state",
+            "expressionAttributes": [
+                "WORK_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_STATE))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.state"
+        },
+        {
+            "id": "756cd13116a543a98b376755c910f294",
+            "version": 0,
+            "createdDate": 1654879914374,
+            "modifiedDate": 1654879914374,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_CITY))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.city",
+            "expressionAttributes": [
+                "WORK_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_CITY))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.city"
+        },
+        {
+            "id": "0389e626b91a47f6b4ea3dbae384d0ef",
+            "version": 0,
+            "createdDate": 1654879914374,
+            "modifiedDate": 1654879914374,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_ADDR_2))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressLine2",
+            "expressionAttributes": [
+                "WORK_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_ADDR_2))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressLine2"
+        },
+        {
+            "id": "dd04d84cbb6d4dc19ec39e5d50a95549",
+            "version": 0,
+            "createdDate": 1654879914374,
+            "modifiedDate": 1654879914374,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(WORK_ADDR_1))",
+            "destination": "_abbviecommercial.contactDetails.workAddress.addressLine1",
+            "expressionAttributes": [
+                "WORK_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(WORK_ADDR_1))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.workAddress.addressLine1"
+        },
+        {
+            "id": "29999c4693a54bc691f397054d0bafbf",
+            "version": 0,
+            "createdDate": 1654879914375,
+            "modifiedDate": 1654879914375,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif (HOME_ADDR_1 == null || \"\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \"home\")",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressType",
+            "expressionAttributes": [
+                "HOME_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif (HOME_ADDR_1 == null || \"\".equalsIgnoreCase(trim(HOME_ADDR_1)), null, \"home\")",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressType"
+        },
+        {
+            "id": "fb042185d7254b42b90dbe71a680dc59",
+            "version": 0,
+            "createdDate": 1654879914375,
+            "modifiedDate": 1654879914375,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "trim(HOME_ZIP)",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.zipCode",
+            "expressionAttributes": [
+                "HOME_ZIP"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "trim(HOME_ZIP)",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.zipCode"
+        },
+        {
+            "id": "e2cec83441e942d5b399dcfb762159b4",
+            "version": 0,
+            "createdDate": 1654879914375,
+            "modifiedDate": 1654879914375,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_STATE))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.state",
+            "expressionAttributes": [
+                "HOME_STATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_STATE))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.state"
+        },
+        {
+            "id": "0708f8df35c84cf0bae8a91801b1c698",
+            "version": 0,
+            "createdDate": 1654879914376,
+            "modifiedDate": 1654879914376,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_CITY))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.city",
+            "expressionAttributes": [
+                "HOME_CITY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_CITY))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.city"
+        },
+        {
+            "id": "dfe5718ee05c48b486bf489b66e7cb41",
+            "version": 0,
+            "createdDate": 1654879914376,
+            "modifiedDate": 1654879914376,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_ADDR_2))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressLine2",
+            "expressionAttributes": [
+                "HOME_ADDR_2"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_ADDR_2))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressLine2"
+        },
+        {
+            "id": "df20214f2d224cdcb482b8e195bab7da",
+            "version": 0,
+            "createdDate": 1654879914376,
+            "modifiedDate": 1654879914376,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(HOME_ADDR_1))",
+            "destination": "_abbviecommercial.contactDetails.homeAddress.addressLine1",
+            "expressionAttributes": [
+                "HOME_ADDR_1"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(HOME_ADDR_1))",
+            "destinationXdmPath": "_abbviecommercial.contactDetails.homeAddress.addressLine1"
+        },
+        {
+            "id": "0017fe38f9b541d89b2d368e03ea0a6a",
+            "version": 0,
+            "createdDate": 1654879914376,
+            "modifiedDate": 1654879914376,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(iif(PREF_LANG_CD == null || \"\".equalsIgnoreCase(trim(PREF_LANG_CD)), \"EMPTY\", \nupper(trim(PREF_LANG_CD))), \"EN\", \"en\", \"ES\", \"es\", \"EMPTY\", null, \"other\")",
+            "destination": "_abbviecommercial.patientPreferences.preferredLanguage",
+            "expressionAttributes": [
+                "PREF_LANG_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(iif(PREF_LANG_CD == null || \"\".equalsIgnoreCase(trim(PREF_LANG_CD)), \"EMPTY\", \nupper(trim(PREF_LANG_CD))), \"EN\", \"en\", \"ES\", \"es\", \"EMPTY\", null, \"other\")",
+            "destinationXdmPath": "_abbviecommercial.patientPreferences.preferredLanguage"
+        },
+        {
+            "id": "d75013bbc79c466e84b4f64dc660732c",
+            "version": 0,
+            "createdDate": 1654879914377,
+            "modifiedDate": 1654879914377,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(upper(trim(GNDR_CD)), \"M\", \"male\", \"F\", \"female\", \"O\", \"other\", \"U\", \"unknown\", null)",
+            "destination": "_abbviecommercial.personDetails.gender",
+            "expressionAttributes": [
+                "GNDR_CD"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(upper(trim(GNDR_CD)), \"M\", \"male\", \"F\", \"female\", \"O\", \"other\", \"U\", \"unknown\", null)",
+            "destinationXdmPath": "_abbviecommercial.personDetails.gender"
+        },
+        {
+            "id": "964f7ce7b15c42aaa083c0e2e989a128",
+            "version": 0,
+            "createdDate": 1654879914377,
+            "modifiedDate": 1654879914377,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))",
+            "destination": "_abbviecommercial.personDetails.birthYear",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, substr(BIRTH_DT, 0,4))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthYear"
+        },
+        {
+            "id": "ab96c99a07ca4823aa90324cdcc8a33b",
+            "version": 0,
+            "createdDate": 1654879914378,
+            "modifiedDate": 1654879914378,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \"-\", substr(BIRTH_DT, 5,2)))",
+            "destination": "_abbviecommercial.personDetails.birthDayAndMonth",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(BIRTH_DT == null || \"\".equalsIgnoreCase(trim(BIRTH_DT)), null, concat(substr(BIRTH_DT, 8,2), \"-\", substr(BIRTH_DT, 5,2)))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthDayAndMonth"
+        },
+        {
+            "id": "e91126641d61444cb316d8a4303e4c7b",
+            "version": 0,
+            "createdDate": 1654879914378,
+            "modifiedDate": 1654879914378,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "BIRTH_DT",
+            "destination": "_abbviecommercial.personDetails.birthDate",
+            "expressionAttributes": [
+                "BIRTH_DT"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "BIRTH_DT",
+            "destinationXdmPath": "_abbviecommercial.personDetails.birthDate"
+        },
+        {
+            "id": "067e852b335f4182ad4f06d13886a812",
+            "version": 0,
+            "createdDate": 1654879914378,
+            "modifiedDate": 1654879914378,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(concat(trim(FRST_NM), \" \", iif(MID_NM == null, \"\", concat(trim(MID_NM), \" \")), trim(LAST_NM)))",
+            "destination": "_abbviecommercial.personDetails.name",
+            "expressionAttributes": [
+                "LAST_NM",
+                "FRST_NM",
+                "MID_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(concat(trim(FRST_NM), \" \", iif(MID_NM == null, \"\", concat(trim(MID_NM), \" \")), trim(LAST_NM)))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.name"
+        },
+        {
+            "id": "f66bd0714224479188c149e7fa3d2bc4",
+            "version": 0,
+            "createdDate": 1654879914379,
+            "modifiedDate": 1654879914379,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(LAST_NM))",
+            "destination": "_abbviecommercial.personDetails.lastName",
+            "expressionAttributes": [
+                "LAST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(LAST_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.lastName"
+        },
+        {
+            "id": "b078d232bd304f63ac51d59d9ccf9c39",
+            "version": 0,
+            "createdDate": 1654879914379,
+            "modifiedDate": 1654879914379,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(MID_NM))",
+            "destination": "_abbviecommercial.personDetails.middleName",
+            "expressionAttributes": [
+                "MID_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(MID_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.middleName"
+        },
+        {
+            "id": "da993ce6875343a39142a35d61f863ac",
+            "version": 0,
+            "createdDate": 1654879914379,
+            "modifiedDate": 1654879914379,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "lower(trim(FRST_NM))",
+            "destination": "_abbviecommercial.personDetails.firstName",
+            "expressionAttributes": [
+                "FRST_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "lower(trim(FRST_NM))",
+            "destinationXdmPath": "_abbviecommercial.personDetails.firstName"
+        },
+        {
+            "id": "9e25b0d77e49464aba8fd2f6bca9886b",
+            "version": 0,
+            "createdDate": 1654879914379,
+            "modifiedDate": 1654879914379,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))",
+            "destination": "_abbviecommercial.abbvieIdentities.hashedEmail",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "HOME_EMAIL",
+                "WORK_EMAIL"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, sha256(iif(HOME_EMAIL == null || \"\".equalsIgnoreCase(trim(HOME_EMAIL)), iif(WORK_EMAIL == null || \"\".equalsIgnoreCase(trim(WORK_EMAIL)), null, lower(trim(WORK_EMAIL))), lower(trim(HOME_EMAIL)))))",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.hashedEmail"
+        },
+        {
+            "id": "805609150c2b49f18472c7a0f879b6e1",
+            "version": 0,
+            "createdDate": 1654879914380,
+            "modifiedDate": 1654879914380,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", \"\")), \nsha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", MKT_CLOUD_ID)))",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "PRM_ID",
+                "INDIV_ID",
+                "MKT_CLOUD_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", \"\")), \nsha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", MKT_CLOUD_ID)))",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "id": "994b9ac7503c44cb903fee95c07f1510",
+            "version": 0,
+            "createdDate": 1654879914381,
+            "modifiedDate": 1654879914381,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)",
+            "destination": "_abbviecommercial.abbvieIdentities.ecid",
+            "expressionAttributes": [
+                "HAS_CAREGIVER",
+                "MKT_CLOUD_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(\"Y\".equalsIgnoreCase(HAS_CAREGIVER), null, MKT_CLOUD_ID)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.ecid"
+        },
+        {
+            "id": "1c5f2483192b41b38eea32697190f8cc",
+            "version": 0,
+            "createdDate": 1654879914381,
+            "modifiedDate": 1654879914381,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "PRM_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.prmID",
+            "expressionAttributes": [
+                "PRM_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRM_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.prmID"
+        },
+        {
+            "id": "c33832b23ad644c5a535417b34fc9de9",
+            "version": 0,
+            "createdDate": 1654879914381,
+            "modifiedDate": 1654879914381,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        }
+    ],
+    "status": "DRAFT",
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/1ee6fc0711482e90d31572b717b385386e7a9de4d3b300e7"
+}

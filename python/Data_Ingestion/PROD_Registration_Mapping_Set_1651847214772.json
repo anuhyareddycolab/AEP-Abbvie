@@ -1,0 +1,252 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+            "contentType": "1.0"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(lower(INSURANCE), lower(\"Do you currently have insurance? NO\"), \"uninsured\", \nlower(\"Do you currently have insurance? YES, Federal/Government (e.g. Medicare Part D, Medicaid, VA, Tricare, state program)\"), \"government\",\nlower(\"Do you currently have insurance? YES, private commercial (e.g. through employer, former employer)\"), \"commercial\", null)\n",
+            "destination": "_abbviecommercial.registrationDetails.insurancePlanType",
+            "expressionAttributes": [
+                "INSURANCE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(lower(INSURANCE), lower(\"Do you currently have insurance? NO\"), \"uninsured\", \nlower(\"Do you currently have insurance? YES, Federal/Government (e.g. Medicare Part D, Medicaid, VA, Tricare, state program)\"), \"government\",\nlower(\"Do you currently have insurance? YES, private commercial (e.g. through employer, former employer)\"), \"commercial\", null)\n",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.insurancePlanType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(INDICATION, \"(UPA RA) I am diagnosed with moderate to severe rheumatoid arthritis\", \"Rheumatoid Arthritis (RA)\",\n\"Adolescent Atopic Dermatitis (ADAD)\", \"Adolescent Atopic Dermatitis (ADAD)\",\n\"Ankylosing Spondylitis (AS)\", \"Ankylosing Spondylitis (AS)\",\n\"Are you currently prescribed UPA for moderate to severe RA?\", \"Rheumatoid Arthritis (RA)\",\n\"Atopic Dermatitis (AD)\", \"Atopic Dermatitis (AD)\",\n\"Have you been diagnosed with eczema (atopic dermatitis)?\", \"Atopic Dermatitis (AD)\",\n\"Other - RISA Indication\", \"Other - RISA Indication\",\n\"PED AD - Have you been diagnosed with Adolescent Atopic Determatitis (ADAD)?\", \"Adolescent Atopic Dermatitis (ADAD)\",\n\"Plaque Psoriasis (Ps)\", \"Plaque Psoriasis (Ps)\",\n\"Psoriatic Arthritis (PsA)\", \"Psoriatic Arthritis (PsA)\",\n\"Rheumatoid Arthritis (RA)\", \"Rheumatoid Arthritis (RA)\",\n\"Skyrizi Patient Indication - I am diagnosed with moderate to severe plaque psoriasis\", \"Plaque Psoriasis (Ps)\",\n\"Ulcerative Colitis (UC)\", \"Ulcerative Colitis (UC)\", null)\n\n",
+            "destination": "_abbviecommercial.diagnosis.diagnosisName",
+            "expressionAttributes": [
+                "INDICATION"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(INDICATION, \"(UPA RA) I am diagnosed with moderate to severe rheumatoid arthritis\", \"Rheumatoid Arthritis (RA)\",\n\"Adolescent Atopic Dermatitis (ADAD)\", \"Adolescent Atopic Dermatitis (ADAD)\",\n\"Ankylosing Spondylitis (AS)\", \"Ankylosing Spondylitis (AS)\",\n\"Are you currently prescribed UPA for moderate to severe RA?\", \"Rheumatoid Arthritis (RA)\",\n\"Atopic Dermatitis (AD)\", \"Atopic Dermatitis (AD)\",\n\"Have you been diagnosed with eczema (atopic dermatitis)?\", \"Atopic Dermatitis (AD)\",\n\"Other - RISA Indication\", \"Other - RISA Indication\",\n\"PED AD - Have you been diagnosed with Adolescent Atopic Determatitis (ADAD)?\", \"Adolescent Atopic Dermatitis (ADAD)\",\n\"Plaque Psoriasis (Ps)\", \"Plaque Psoriasis (Ps)\",\n\"Psoriatic Arthritis (PsA)\", \"Psoriatic Arthritis (PsA)\",\n\"Rheumatoid Arthritis (RA)\", \"Rheumatoid Arthritis (RA)\",\n\"Skyrizi Patient Indication - I am diagnosed with moderate to severe plaque psoriasis\", \"Plaque Psoriasis (Ps)\",\n\"Ulcerative Colitis (UC)\", \"Ulcerative Colitis (UC)\", null)\n\n",
+            "destinationXdmPath": "_abbviecommercial.diagnosis.diagnosisName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "decode(upper(trim(PROD_NM)), \"UPA\", \"RINVOQ\", upper(PROD_NM))",
+            "destination": "_abbviecommercial.channelSource.drugName",
+            "expressionAttributes": [
+                "PROD_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "decode(upper(trim(PROD_NM)), \"UPA\", \"RINVOQ\", upper(PROD_NM))",
+            "destinationXdmPath": "_abbviecommercial.channelSource.drugName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(instr(upper(RSP_SRC_DSC), \"PATIENTAPPLICATION\") >= 0, \"APP\", iif(instr(upper(RSP_SRC_DSC), \"COMPLETE PRO\") >= 0, \"CPRO\", iif(instr(upper(RSP_SRC_DSC), \"FAX REGISTRATION\") >= 0 || instr(upper(RSP_SRC_DSC), \"FAX\") >= 0, \"FAX\", iif(instr(upper(RSP_SRC_DSC), \"OPUS\") >= 0, \"OPUS\", iif(instr(upper(RSP_SRC_DSC), \"LIVEOPS\") >= 0 || instr(upper(RSP_SRC_DSC), \"PHONE\") >= 0 || instr(upper(RSP_SRC_DSC), \"MASTERING\") >= 0 || instr(upper(RSP_SRC_DSC), \"PROFILE UPDATES\") >= 0, \"PHONE\", iif(instr(upper(RSP_SRC_DSC), \".COM\") >= 0 || instr(upper(RSP_SRC_DSC), \"WEBSITE\") >= 0 || instr(upper(RSP_SRC_DSC), \"WEB\") >= 0 || instr(upper(RSP_SRC_DSC), \"TABLET\") >= 0|| instr(upper(RSP_SRC_DSC), \"DESKTOP\") >= 0 || instr(upper(RSP_SRC_DSC), \"MOBILE\") >= 0 || instr(upper(RSP_SRC_DSC), \"SHARECARE\") >= 0, \"WEB\", \"PRM\"))))))",
+            "destination": "_abbviecommercial.channelSource.channelDataSource",
+            "expressionAttributes": [
+                "RSP_SRC_DSC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(instr(upper(RSP_SRC_DSC), \"PATIENTAPPLICATION\") >= 0, \"APP\", iif(instr(upper(RSP_SRC_DSC), \"COMPLETE PRO\") >= 0, \"CPRO\", iif(instr(upper(RSP_SRC_DSC), \"FAX REGISTRATION\") >= 0 || instr(upper(RSP_SRC_DSC), \"FAX\") >= 0, \"FAX\", iif(instr(upper(RSP_SRC_DSC), \"OPUS\") >= 0, \"OPUS\", iif(instr(upper(RSP_SRC_DSC), \"LIVEOPS\") >= 0 || instr(upper(RSP_SRC_DSC), \"PHONE\") >= 0 || instr(upper(RSP_SRC_DSC), \"MASTERING\") >= 0 || instr(upper(RSP_SRC_DSC), \"PROFILE UPDATES\") >= 0, \"PHONE\", iif(instr(upper(RSP_SRC_DSC), \".COM\") >= 0 || instr(upper(RSP_SRC_DSC), \"WEBSITE\") >= 0 || instr(upper(RSP_SRC_DSC), \"WEB\") >= 0 || instr(upper(RSP_SRC_DSC), \"TABLET\") >= 0|| instr(upper(RSP_SRC_DSC), \"DESKTOP\") >= 0 || instr(upper(RSP_SRC_DSC), \"MOBILE\") >= 0 || instr(upper(RSP_SRC_DSC), \"SHARECARE\") >= 0, \"WEB\", \"PRM\"))))))",
+            "destinationXdmPath": "_abbviecommercial.channelSource.channelDataSource"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "date(RSP_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destination": "_abbviecommercial.registrationDetails.registrationDate",
+            "expressionAttributes": [
+                "RSP_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(RSP_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.registrationDate"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "date(RSP_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destination": "timestamp",
+            "expressionAttributes": [
+                "RSP_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(RSP_TS, \"yyyy-MM-dd HH:mm:ss\")",
+            "destinationXdmPath": "timestamp"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "concat(uuid(),\"-\",timestamp())",
+            "destination": "_id",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "concat(uuid(),\"-\",timestamp())",
+            "destinationXdmPath": "_id"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", ECID))",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "PRM_ID",
+                "ECID",
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "sha256(concat(PRM_ID, \"-\", INDIV_ID, \"-\", ECID))",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "ECID",
+            "destination": "_abbviecommercial.abbvieIdentities.ecid",
+            "expressionAttributes": [
+                "ECID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "ECID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.ecid"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRM_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.prmID",
+            "expressionAttributes": [
+                "PRM_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRM_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.prmID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "LENGTH_OF_THERAPY",
+            "destination": "_abbviecommercial.registrationDetails.lengthOfTherapy",
+            "expressionAttributes": [
+                "LENGTH_OF_THERAPY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "LENGTH_OF_THERAPY",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.lengthOfTherapy"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "SPECIALTY",
+            "destination": "_abbviecommercial.diagnosis.specialtyName",
+            "expressionAttributes": [
+                "SPECIALTY"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "SPECIALTY",
+            "destinationXdmPath": "_abbviecommercial.diagnosis.specialtyName"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "START_DATE",
+            "destination": "_abbviecommercial.registrationDetails.therapyStartDate",
+            "expressionAttributes": [
+                "START_DATE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "START_DATE",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.therapyStartDate"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PLACE_OF_ADMIN",
+            "destination": "_abbviecommercial.registrationDetails.placeOfService",
+            "expressionAttributes": [
+                "PLACE_OF_ADMIN"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PLACE_OF_ADMIN",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.placeOfService"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "ADMIN_MODE",
+            "destination": "_abbviecommercial.registrationDetails.administrativeMode",
+            "expressionAttributes": [
+                "ADMIN_MODE"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "ADMIN_MODE",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.administrativeMode"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "UUID",
+            "destination": "_abbviecommercial.abbvieIdentities.uuid",
+            "expressionAttributes": [
+                "UUID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "UUID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.uuid"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PATIENT_IND",
+            "destination": "_abbviecommercial.registrationDetails.isPatient",
+            "expressionAttributes": [
+                "PATIENT_IND"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PATIENT_IND",
+            "destinationXdmPath": "_abbviecommercial.registrationDetails.isPatient"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "1.0",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1",
+        "contentType": "1.0"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/609603e52dd66bd6cc825fdde2e145d3033e4d46de6c84a1"
+}

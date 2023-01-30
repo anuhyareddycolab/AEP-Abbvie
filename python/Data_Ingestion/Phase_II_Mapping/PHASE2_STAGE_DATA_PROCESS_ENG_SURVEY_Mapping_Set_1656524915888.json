@@ -1,0 +1,149 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/fd506a8b36176b662ccbc1ed4ee67270fbff3ffb072be1a",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "UUID",
+            "destination": "_abbviecommercial.abbvieIdentities.uuid",
+            "expressionAttributes": [
+                "UUID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "UUID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.uuid"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "QUEST_DSC",
+            "destination": "_abbviecommercial.surveyData.QUEST_DSC",
+            "expressionAttributes": [
+                "QUEST_DSC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "QUEST_DSC",
+            "destinationXdmPath": "_abbviecommercial.surveyData.QUEST_DSC"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "ECID",
+            "destination": "_abbviecommercial.abbvieIdentities.ecid",
+            "expressionAttributes": [
+                "ECID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "ECID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.ecid"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RSP_TS",
+            "destination": "_abbviecommercial.surveyData.RSP_TS",
+            "expressionAttributes": [
+                "RSP_TS"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RSP_TS",
+            "destinationXdmPath": "_abbviecommercial.surveyData.RSP_TS"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "RSP_SRC_DSC",
+            "destination": "_abbviecommercial.surveyData.RSP_SRC_DSC",
+            "expressionAttributes": [
+                "RSP_SRC_DSC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "RSP_SRC_DSC",
+            "destinationXdmPath": "_abbviecommercial.surveyData.RSP_SRC_DSC"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PRMID",
+            "destination": "_abbviecommercial.abbvieIdentities.prmID",
+            "expressionAttributes": [
+                "PRMID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PRMID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.prmID"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "INDIV_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "INDIV_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "INDIV_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "ANSW_DSC",
+            "destination": "_abbviecommercial.surveyData.ANSW_DSC",
+            "expressionAttributes": [
+                "ANSW_DSC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "ANSW_DSC",
+            "destinationXdmPath": "_abbviecommercial.surveyData.ANSW_DSC"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PROD_NM",
+            "destination": "_abbviecommercial.surveyData.PROD_NM",
+            "expressionAttributes": [
+                "PROD_NM"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PROD_NM",
+            "destinationXdmPath": "_abbviecommercial.surveyData.PROD_NM"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "PROMO_RSP_ID",
+            "destination": "_abbviecommercial.surveyData.PROMO_RSP_ID",
+            "expressionAttributes": [
+                "PROMO_RSP_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "PROMO_RSP_ID",
+            "destinationXdmPath": "_abbviecommercial.surveyData.PROMO_RSP_ID"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/fd506a8b36176b662ccbc1ed4ee67270fbff3ffb072be1a",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/fd506a8b36176b662ccbc1ed4ee67270fbff3ffb072be1a"
+}

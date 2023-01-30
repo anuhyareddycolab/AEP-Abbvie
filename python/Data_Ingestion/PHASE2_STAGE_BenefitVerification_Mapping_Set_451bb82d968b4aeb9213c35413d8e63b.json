@@ -1,0 +1,414 @@
+{
+    
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+            "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+        }
+    },
+    "mappings": [
+        {
+            "id": "3450459bf5c940208337e3d5baf300be",
+            "version": 0,
+            "createdDate": 1656330058785,
+            "modifiedDate": 1656330058785,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxBin == \"NULL\" || RxBin == \"NA\", nullify(),RxBin ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxBin",
+            "expressionAttributes": [
+                "RxBin"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxBin == \"NULL\" || RxBin == \"NA\", nullify(),RxBin ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxBin"
+        },
+        {
+            "id": "8690288bb5294aa9a686634edefec0ea",
+            "version": 0,
+            "createdDate": 1656330058786,
+            "modifiedDate": 1656330058786,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxPcn == \"NULL\" || RxPcn == \"NA\", nullify(),RxPcn ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxPCN",
+            "expressionAttributes": [
+                "RxPcn"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxPcn == \"NULL\" || RxPcn == \"NA\", nullify(),RxPcn ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxPCN"
+        },
+        {
+            "id": "ca0989b3c7e44fefa66568340807614d",
+            "version": 0,
+            "createdDate": 1656330058786,
+            "modifiedDate": 1656330058786,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCompanyName == \"NULL\" || InsuranceCompanyName == \"NA\", nullify(),InsuranceCompanyName )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyName",
+            "expressionAttributes": [
+                "InsuranceCompanyName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCompanyName == \"NULL\" || InsuranceCompanyName == \"NA\", nullify(),InsuranceCompanyName )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyName"
+        },
+        {
+            "id": "3ee34f486ea445c0b6ff96fe9c20310b",
+            "version": 0,
+            "createdDate": 1656330058786,
+            "modifiedDate": 1656330058786,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCardType == \"NULL\" || InsuranceCardType == \"NA\", nullify(),InsuranceCardType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCardType",
+            "expressionAttributes": [
+                "InsuranceCardType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCardType == \"NULL\" || InsuranceCardType == \"NA\", nullify(),InsuranceCardType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCardType"
+        },
+        {
+            "id": "6ce7bef7b25d462a9b58386bb8cc2fcd",
+            "version": 0,
+            "createdDate": 1656330058787,
+            "modifiedDate": 1656330058787,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( InsuranceCompanyType == \"NULL\" || InsuranceCompanyType == \"NA\", nullify(),InsuranceCompanyType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyType",
+            "expressionAttributes": [
+                "InsuranceCompanyType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( InsuranceCompanyType == \"NULL\" || InsuranceCompanyType == \"NA\", nullify(),InsuranceCompanyType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.insuranceCompanyType"
+        },
+        {
+            "id": "3f540f66c5054696a36c832b2e6f0abc",
+            "version": 0,
+            "createdDate": 1656330058787,
+            "modifiedDate": 1656330058787,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( GovernmentInsuranceType == \"NULL\" || GovernmentInsuranceType == \"NA\", nullify(),GovernmentInsuranceType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.governmentInsuranceType",
+            "expressionAttributes": [
+                "GovernmentInsuranceType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( GovernmentInsuranceType == \"NULL\" || GovernmentInsuranceType == \"NA\", nullify(),GovernmentInsuranceType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.governmentInsuranceType"
+        },
+        {
+            "id": "cbad384e186d49448cea0b2b183eb5bf",
+            "version": 0,
+            "createdDate": 1656330058788,
+            "modifiedDate": 1656330058788,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PlanName == \"NULL\" || PlanName == \"NA\", nullify(),PlanName )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.planName",
+            "expressionAttributes": [
+                "PlanName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PlanName == \"NULL\" || PlanName == \"NA\", nullify(),PlanName )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.planName"
+        },
+        {
+            "id": "2e4b6490c86243ecbb7971b4037ceed4",
+            "version": 0,
+            "createdDate": 1656330058788,
+            "modifiedDate": 1656330058788,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PlanType == \"NULL\" || PlanType == \"NA\", nullify(),PlanType )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.planType",
+            "expressionAttributes": [
+                "PlanType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PlanType == \"NULL\" || PlanType == \"NA\", nullify(),PlanType )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.planType"
+        },
+        {
+            "id": "ceb6d6fe1f8f496090ec6e0a167d76fa",
+            "version": 0,
+            "createdDate": 1656330058788,
+            "modifiedDate": 1656330058788,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( PrescriptionMemberId == \"NULL\" || PrescriptionMemberId == \"NA\", nullify(),PrescriptionMemberId )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.prescriptionMemberId",
+            "expressionAttributes": [
+                "PrescriptionMemberId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( PrescriptionMemberId == \"NULL\" || PrescriptionMemberId == \"NA\", nullify(),PrescriptionMemberId )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.prescriptionMemberId"
+        },
+        {
+            "id": "9a43729f54174f56aec2245dfe875ea2",
+            "version": 0,
+            "createdDate": 1656330058789,
+            "modifiedDate": 1656330058789,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( IsCopaySavingsEligible == \"NULL\" || IsCopaySavingsEligible == \"NA\", nullify(),IsCopaySavingsEligible )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.isCopaySavingsEligible",
+            "expressionAttributes": [
+                "IsCopaySavingsEligible"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( IsCopaySavingsEligible == \"NULL\" || IsCopaySavingsEligible == \"NA\", nullify(),IsCopaySavingsEligible )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.isCopaySavingsEligible"
+        },
+        {
+            "id": "a32407a154814870a5544f21d6234e32",
+            "version": 0,
+            "createdDate": 1656330058789,
+            "modifiedDate": 1656330058789,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif( ProductCoverageStatus == \"NULL\" || ProductCoverageStatus == \"NA\", nullify(),ProductCoverageStatus )",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.productCoverageStatus",
+            "expressionAttributes": [
+                "ProductCoverageStatus"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif( ProductCoverageStatus == \"NULL\" || ProductCoverageStatus == \"NA\", nullify(),ProductCoverageStatus )",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.productCoverageStatus"
+        },
+        {
+            "id": "448d1cef8ee74f50ab690f8cf9037572",
+            "version": 0,
+            "createdDate": 1656330058789,
+            "modifiedDate": 1656330058789,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(RxGrp == \"NULL\" || RxGrp == \"NA\", nullify(),RxGrp ) ",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.rxGrp",
+            "expressionAttributes": [
+                "RxGrp"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(RxGrp == \"NULL\" || RxGrp == \"NA\", nullify(),RxGrp ) ",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.rxGrp"
+        },
+        {
+            "id": "f92575544ce44e77bb2c55c597d4bc75",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "now()",
+            "destination": "timestamp",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "now()",
+            "destinationXdmPath": "timestamp"
+        },
+        {
+            "id": "931c8f3e3c4f405eb62655f707d35aa0",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "uuid()",
+            "destination": "_id",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "uuid()",
+            "destinationXdmPath": "_id"
+        },
+        {
+            "id": "dc394d6507e64c2ebb8dc1f04679cea1",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "NDC",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.ndc",
+            "expressionAttributes": [
+                "NDC"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "NDC",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.ndc"
+        },
+        {
+            "id": "73c53e8ac0b24cc8be2afd0c0e41ae50",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.aep-xl",
+            "source": "sha256(IndivId)",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "IndivId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "sha256(IndivId)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "id": "1b23193d29c146ba8723ca0f5e4697a8",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "IndivId",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "IndivId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "IndivId",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        },
+        {
+            "id": "39307e0e343242ad97dc62cd588bb92f",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "DrugName",
+            "destination": "_abbviecommercial.channelSource.drugName",
+            "expressionAttributes": [
+                "DrugName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "DrugName",
+            "destinationXdmPath": "_abbviecommercial.channelSource.drugName"
+        },
+        {
+            "id": "8f45b6b9e9994365ae70d2937c6c415c",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "GroupNumber",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.groupNumber",
+            "expressionAttributes": [
+                "GroupNumber"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "GroupNumber",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.groupNumber"
+        },
+        {
+            "id": "3466d866e24d46d7b2ea4d7ff49896f2",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "DisadvantagedAccessReason",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.disadvantagedAccessReason",
+            "expressionAttributes": [
+                "DisadvantagedAccessReason"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "DisadvantagedAccessReason",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.disadvantagedAccessReason"
+        },
+        {
+            "id": "b9de970b78ce4553a61e8d12353c46ef",
+            "version": 0,
+            "createdDate": 1656330058790,
+            "modifiedDate": 1656330058790,
+            "createdBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "modifiedBy": "77F53C2D6220CAD20A495F90@AdobeID",
+            "sourceType": "text/x.schema-path",
+            "source": "MedicalMemberId",
+            "destination": "_abbviecommercial.benefitVerificationAndInsurance.medicalMemberId",
+            "expressionAttributes": [
+                "MedicalMemberId"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "MedicalMemberId",
+            "destinationXdmPath": "_abbviecommercial.benefitVerificationAndInsurance.medicalMemberId"
+        }
+    ],
+    "status": "DRAFT",
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "application/vnd.adobe.xed-full-notext+json;version=1",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c",
+        "contentType": "application/vnd.adobe.xed-full-notext+json;version=1"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/d5eb7459163689b0d9adacdf36054bd7ad928de7d643593c"
+}

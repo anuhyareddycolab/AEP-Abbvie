@@ -1,0 +1,169 @@
+{
+    "outputSchema": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+            "contentType": "1.0"
+        }
+    },
+    "mappings": [
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "now()",
+            "destination": "timestamp",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "now()",
+            "destinationXdmPath": "timestamp"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "concat(uuid())",
+            "destination": "_id",
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "concat(uuid())",
+            "destinationXdmPath": "_id"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "sha256(Indiv_ID)",
+            "destination": "_abbviecommercial.abbvieIdentities.cdpId",
+            "expressionAttributes": [
+                "Indiv_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "sha256(Indiv_ID)",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.cdpId"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "iif(instr(upper(DataSourceDescription), \"PATIENTAPPLICATION\") >= 0 || instr(upper(DataSourceDescription), \"PATIENT APPLICATION\") >= 0, \"APP\", iif(instr(upper(DataSourceDescription), \"COMPLETE PRO\") >= 0, \"IDN\", iif(instr(upper(DataSourceDescription), \"FAX REGISTRATION\") >= 0 || instr(upper(DataSourceDescription), \"FAX\") >= 0, \"FAX\", iif(instr(upper(DataSourceDescription), \"OPUS\") >= 0 || instr(upper(DataSourceDescription), \"PHARMACY\") >= 0, \"PHARMACY\", iif(instr(upper(DataSourceDescription), \"LIVEOPS\") >= 0 || instr(upper(DataSourceDescription), \"800-4HUMIRA\") >= 0 || instr(upper(DataSourceDescription), \"PHONE\") >= 0 || instr(upper(DataSourceDescription), \"MASTERING\") >= 0 || instr(upper(DataSourceDescription), \"PROFILE UPDATES\") >= 0, \"PHONE\", iif(instr(upper(DataSourceDescription), \".COM\") >= 0 || instr(upper(DataSourceDescription), \"WEBSITE\") >= 0 || instr(upper(DataSourceDescription), \"WEB\") >= 0 || instr(upper(DataSourceDescription), \"TABLET\") >= 0|| instr(upper(DataSourceDescription), \"DESKTOP\") >= 0 || instr(upper(DataSourceDescription), \"MOBILE\") >= 0 || instr(upper(DataSourceDescription), \"SHARECARE\") >= 0, \"WEB\", \"OTHER\"))))))",
+            "destination": "_abbviecommercial.channelSource.channelDataSource",
+            "expressionAttributes": [
+                "DataSourceDescription"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "iif(instr(upper(DataSourceDescription), \"PATIENTAPPLICATION\") >= 0 || instr(upper(DataSourceDescription), \"PATIENT APPLICATION\") >= 0, \"APP\", iif(instr(upper(DataSourceDescription), \"COMPLETE PRO\") >= 0, \"IDN\", iif(instr(upper(DataSourceDescription), \"FAX REGISTRATION\") >= 0 || instr(upper(DataSourceDescription), \"FAX\") >= 0, \"FAX\", iif(instr(upper(DataSourceDescription), \"OPUS\") >= 0 || instr(upper(DataSourceDescription), \"PHARMACY\") >= 0, \"PHARMACY\", iif(instr(upper(DataSourceDescription), \"LIVEOPS\") >= 0 || instr(upper(DataSourceDescription), \"800-4HUMIRA\") >= 0 || instr(upper(DataSourceDescription), \"PHONE\") >= 0 || instr(upper(DataSourceDescription), \"MASTERING\") >= 0 || instr(upper(DataSourceDescription), \"PROFILE UPDATES\") >= 0, \"PHONE\", iif(instr(upper(DataSourceDescription), \".COM\") >= 0 || instr(upper(DataSourceDescription), \"WEBSITE\") >= 0 || instr(upper(DataSourceDescription), \"WEB\") >= 0 || instr(upper(DataSourceDescription), \"TABLET\") >= 0|| instr(upper(DataSourceDescription), \"DESKTOP\") >= 0 || instr(upper(DataSourceDescription), \"MOBILE\") >= 0 || instr(upper(DataSourceDescription), \"SHARECARE\") >= 0, \"WEB\", \"OTHER\"))))))",
+            "destinationXdmPath": "_abbviecommercial.channelSource.channelDataSource"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "\ndecode(upper(trim(ProductName)), \"SKY\", \"SKYRIZI\", \"UPA\", \"RINVOQ\", upper(ProductName))",
+            "destination": "_abbviecommercial.channelSource.drugName",
+            "expressionAttributes": [
+                "ProductName"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "\ndecode(upper(trim(ProductName)), \"SKY\", \"SKYRIZI\", \"UPA\", \"RINVOQ\", upper(ProductName))",
+            "destinationXdmPath": "_abbviecommercial.channelSource.drugName"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "upper(ResourceType)",
+            "destination": "_abbviecommercial.orderFulfillment.resourceType",
+            "expressionAttributes": [
+                "ResourceType"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "upper(ResourceType)",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.resourceType"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "date(DropDate, \"yyyy-MM-dd HH:mm:ss\")",
+            "destination": "_abbviecommercial.orderFulfillment.orderStatusDate",
+            "expressionAttributes": [
+                "DropDate"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(DropDate, \"yyyy-MM-dd HH:mm:ss\")",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.orderStatusDate"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "date(OrderedDate, \"yyyy-MM-dd HH:mm:ss\")",
+            "destination": "_abbviecommercial.orderFulfillment.orderedDate",
+            "expressionAttributes": [
+                "OrderedDate"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "date(OrderedDate, \"yyyy-MM-dd HH:mm:ss\")",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.orderedDate"
+        },
+        {
+            "sourceType": "text/x.aep-xl",
+            "source": "upper(DeliveryStatusDescription)",
+            "destination": "_abbviecommercial.orderFulfillment.orderStatus",
+            "expressionAttributes": [
+                "DeliveryStatusDescription"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "upper(DeliveryStatusDescription)",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.orderStatus"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "KitDescription",
+            "destination": "_abbviecommercial.orderFulfillment.kitDescription",
+            "expressionAttributes": [
+                "KitDescription"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "KitDescription",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.kitDescription"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "KitCode",
+            "destination": "_abbviecommercial.orderFulfillment.kitCode",
+            "expressionAttributes": [
+                "KitCode"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "KitCode",
+            "destinationXdmPath": "_abbviecommercial.orderFulfillment.kitCode"
+        },
+        {
+            "sourceType": "text/x.schema-path",
+            "source": "Indiv_ID",
+            "destination": "_abbviecommercial.abbvieIdentities.indivId",
+            "expressionAttributes": [
+                "Indiv_ID"
+            ],
+            "identity": false,
+            "primaryIdentity": false,
+            "functionVersion": 1,
+            "sourceAttribute": "Indiv_ID",
+            "destinationXdmPath": "_abbviecommercial.abbvieIdentities.indivId"
+        }
+    ],
+    "strictMapping": false,
+    "allowNullValues": false,
+    "mappingMode": "MAP",
+    "xdmVersion": "1.0",
+    "schemaRef": {
+        "id": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad",
+        "contentType": "1.0"
+    },
+    "xdmSchema": "https://ns.adobe.com/abbviecommercial/schemas/f817fb7594295e1c915b106d2026b32a97fc73a32ff7f4ad"
+}
